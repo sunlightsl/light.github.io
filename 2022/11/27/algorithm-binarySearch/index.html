@@ -20,31 +20,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="light">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="算法 - 二分查找时间复杂度   最好 平均 最坏    O(1) O(logn) O(n)   算法实现 - 文字描述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="algorithm_binarySearch">
+<meta property="og:url" content="http://example.com/2022/11/27/algorithm-binarySearch/index.html">
 <meta property="og:site_name" content="light">
-<meta property="og:description" content="加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来">
+<meta property="og:description" content="算法 - 二分查找时间复杂度   最好 平均 最坏    O(1) O(logn) O(n)   算法实现 - 文字描述">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-27T12:00:13.000Z">
+<meta property="article:modified_time" content="2022-11-27T12:34:14.118Z">
 <meta property="article:author" content="light">
-<meta property="article:tag" content="light, Java, 算法, 计算机科学与技术">
+<meta property="article:tag" content="算法（algorithm）">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/11/27/algorithm-binarySearch/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>light</title>
+  <title>algorithm_binarySearch | light</title>
   
 
 
@@ -180,9 +183,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -198,10 +202,9 @@
       <meta itemprop="name" content="light">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/27/algorithm-binarySearch/" class="post-title-link" itemprop="url">algorithm_binarySearch</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          algorithm_binarySearch
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -228,6 +231,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -266,7 +276,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="算法-二分查找"><a href="#算法-二分查找" class="headerlink" title="算法 - 二分查找"></a>算法 - 二分查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
+        <h2 id="算法-二分查找"><a href="#算法-二分查找" class="headerlink" title="算法 - 二分查找"></a>算法 - 二分查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
 <thead>
 <tr>
 <th align="center">最好</th>
@@ -280,229 +290,56 @@
 <td align="center">O(n)</td>
 </tr>
 </tbody></table>
-<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/11/27/algorithm-binarySearch/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3><span id="more"></span>
+<ul>
+<li>前提：已排序的数组A；</li>
+<li>定义左边界L，右边界R，确定搜索范围，循环执行二分查找（3，4步）；</li>
+<li>获取中间索引M = (L + R) &gt;&gt;&gt; 1;</li>
+<li>中间索引的值A[M] 与待搜索的值T 进行比较<ul>
+<li>A[M] == T 表示找到，返回中间索引。</li>
+<li>A[M] &gt; T 中间值右侧的其他元素都大于T，无需比较，中间索引左边去找， M - 1设置为右边界，重新查找；</li>
+<li>A[M] &gt; T 中间值右侧的其他元素都小T，无需比较，中间索引右边去找， M + 1设置为左边界，重新查找；</li>
+</ul>
+</li>
+<li>当L &gt; R 时，表示没有找到，应结束循环；</li>
+</ul>
+<h3 id="算法实现-代码实现"><a href="#算法实现-代码实现" class="headerlink" title="算法实现 - 代码实现"></a>算法实现 - 代码实现</h3><h4 id="输入：一个有序的数组-a，一个待查找的值-t"><a href="#输入：一个有序的数组-a，一个待查找的值-t" class="headerlink" title="输入：一个有序的数组 a，一个待查找的值 t"></a>输入：一个有序的数组 a，一个待查找的值 t</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> t)</span> &#123;    </span><br><span class="line">    <span class="comment">//l 为左指针，r为右指针，m为中间指针</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>, r = a.length - <span class="number">1</span>, m;    </span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;        </span><br><span class="line">        m = (l + r) &gt;&gt;&gt; <span class="number">1</span>;  <span class="comment">//使用移位可以避免整数溢出问题     </span></span><br><span class="line">        <span class="keyword">if</span> (a[m] == t) &#123;            </span><br><span class="line">             <span class="keyword">return</span> m;       </span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a[m] &gt; t) &#123;            </span><br><span class="line">            r = m - <span class="number">1</span>;       </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;            </span><br><span class="line">            l = m + <span class="number">1</span>;       </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）"><a href="#二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）" class="headerlink" title="二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）"></a>二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）</h4>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%EF%BC%88algorithm%EF%BC%89/" rel="tag"># 算法（algorithm）</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/27/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="light">
-      <meta itemprop="description" content="加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="light">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/27/test/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-27 13:45:03 / 修改时间：20:34:39" itemprop="dateCreated datePublished" datetime="2022-11-27T13:45:03+08:00">2022-11-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" itemprop="url" rel="index"><span itemprop="name">个人网站</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/11/27/test/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/27/test/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="light">
-      <meta itemprop="description" content="加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="light">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-27 13:21:47 / 修改时间：18:03:07" itemprop="dateCreated datePublished" datetime="2022-11-27T13:21:47+08:00">2022-11-27</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/11/27/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/11/27/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>367</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/11/27/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/27/test/" rel="prev" title="test">
+      <i class="fa fa-chevron-left"></i> test
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -549,6 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">算法 - 二分查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">1.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0-%E6%96%87%E5%AD%97%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">算法实现 - 文字描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">算法实现 - 代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A%E4%B8%80%E4%B8%AA%E6%9C%89%E5%BA%8F%E7%9A%84%E6%95%B0%E7%BB%84-a%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%BE%85%E6%9F%A5%E6%89%BE%E7%9A%84%E5%80%BC-t"><span class="nav-number">1.3.1.</span> <span class="nav-text">输入：一个有序的数组 a，一个待查找的值 t</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.4.</span> <span class="nav-text">注意</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%9C%89%E8%AF%B8%E5%A4%9A%E5%8F%98%E4%BD%93%EF%BC%8C%E4%B8%80%E6%97%A6%E4%BD%BF%E7%94%A8%E5%8F%98%E4%BD%93%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%88%99%E5%B7%A6%E5%8F%B3%E8%BE%B9%E7%95%8C%E7%9A%84%E9%80%89%E5%8F%96%E4%BC%9A%E6%9C%89%E5%8F%98%E5%8C%96%EF%BC%8C%E8%BF%9B%E8%80%8C%E4%BC%9A%E5%BD%B1%E5%93%8D%E4%B8%AD%E9%97%B4%E8%BF%87%E7%A8%8B%E7%9A%84%E6%8E%A8%E7%AE%97%EF%BC%88%E6%89%8B%E5%8A%A8%E6%8E%A8%E7%AE%97%E6%97%B6%EF%BC%89"><span class="nav-number">1.4.1.</span> <span class="nav-text">二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
