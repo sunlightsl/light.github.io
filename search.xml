@@ -83,26 +83,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/11/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span> 
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>英语词汇 - CET4</title>
     <url>/2022/11/28/english-CET4/</url>
     <content><![CDATA[<h2 id="英语-CET4"><a href="#英语-CET4" class="headerlink" title="英语 - CET4"></a>英语 - CET4</h2><h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h4 id="词频：203"><a href="#词频：203" class="headerlink" title="词频：203"></a>词频：203</h4><table>
@@ -310,6 +290,233 @@
 <td align="left">n. 机会</td>
 </tr>
 </tbody></table>
+<h4 id="词频：72"><a href="#词频：72" class="headerlink" title="词频：72"></a>词频：72</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">31</td>
+<td align="left">enough</td>
+<td align="left">ad. 充足地；十分地；a. 充足的；足够的</td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left">knowledge</td>
+<td align="left">n. 了解，理解；知识</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left">consumer</td>
+<td align="left">n. 消费者，顾客</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left">challenge</td>
+<td align="left">n. 挑战；质疑；vt. 质疑；向……挑战</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left">risk</td>
+<td align="left">n. 危险，冒险；vt. 冒……的危险</td>
+</tr>
+</tbody></table>
+<h4 id="词频：69-71"><a href="#词频：69-71" class="headerlink" title="词频：69 - 71"></a>词频：69 - 71</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">36</td>
+<td align="left">support</td>
+<td align="left">vt. 支持；帮助；支持；维持</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left">average</td>
+<td align="left">a. 平常的；平均的</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left">against</td>
+<td align="left">prep. 反对；对……什么不利</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left">environment</td>
+<td align="left">n. 环境，外界</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left">generation</td>
+<td align="left">n. 一代人；时代</td>
+</tr>
+</tbody></table>
+<h4 id="词频：68"><a href="#词频：68" class="headerlink" title="词频：68"></a>词频：68</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">41</td>
+<td align="left">report</td>
+<td align="left">n. 报告；v. 报道；公布；宣告</td>
+</tr>
+<tr>
+<td align="left">42</td>
+<td align="left">almost</td>
+<td align="left">ad. 几乎，差不多；将近；快要</td>
+</tr>
+<tr>
+<td align="left">43</td>
+<td align="left">issue</td>
+<td align="left">n. 问题；发行物；流出；vt. 发行；发布；流出</td>
+</tr>
+</tbody></table>
+<h4 id="词频：67"><a href="#词频：67" class="headerlink" title="词频：67"></a>词频：67</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">44</td>
+<td align="left">climate</td>
+<td align="left">n. 气候；氛围；状况；局势</td>
+</tr>
+</tbody></table>
+<h4 id="词频：66"><a href="#词频：66" class="headerlink" title="词频：66"></a>词频：66</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">45</td>
+<td align="left">believe</td>
+<td align="left">vt. 相信；认为；信任</td>
+</tr>
+<tr>
+<td align="left">46</td>
+<td align="left">individual</td>
+<td align="left">a. 个人的；独特的；个别的；n. 个人</td>
+</tr>
+<tr>
+<td align="left">47</td>
+<td align="left">academic</td>
+<td align="left">a. 学院的，大学的；文学的；n.学者</td>
+</tr>
+<tr>
+<td align="left">48</td>
+<td align="left">relationship</td>
+<td align="left">n. 关系；联系；浪漫关系；血缘关系</td>
+</tr>
+<tr>
+<td align="left">49</td>
+<td align="left">current</td>
+<td align="left">a. 现在的；最近的；流行的</td>
+</tr>
+</tbody></table>
+<h4 id="词频：63-65"><a href="#词频：63-65" class="headerlink" title="词频：63 - 65"></a>词频：63 - 65</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">50</td>
+<td align="left">measure</td>
+<td align="left">vt. 测量；估量；n. 测量，测度；措施</td>
+</tr>
+<tr>
+<td align="left">51</td>
+<td align="left">sense</td>
+<td align="left">n. 感觉；意识，观念；理性；vt. 感到；理解，领会</td>
+</tr>
+<tr>
+<td align="left">52</td>
+<td align="left">control</td>
+<td align="left">vt. 控制；管理；配；n. 支配权；管理权</td>
+</tr>
+</tbody></table>
+<h4 id="词频：62"><a href="#词频：62" class="headerlink" title="词频：62"></a>词频：62</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">53</td>
+<td align="left">process</td>
+<td align="left">n. 过程；做事方法；vt. 加工；处理；审阅</td>
+</tr>
+<tr>
+<td align="left">54</td>
+<td align="left">attention</td>
+<td align="left">n. 注意，注意力；照料，关怀</td>
+</tr>
+<tr>
+<td align="left">55</td>
+<td align="left">medical</td>
+<td align="left">a. 医学的；医药的；医疗的</td>
+</tr>
+<tr>
+<td align="left">56</td>
+<td align="left">effort</td>
+<td align="left">n. 努力，尝试；工作；成就</td>
+</tr>
+<tr>
+<td align="left">57</td>
+<td align="left">graduate</td>
+<td align="left">vi. 渐渐变为；取得资格；vt. 授予学位或毕业证书；n. 大学毕业生</td>
+</tr>
+</tbody></table>
+<h4 id="词频：61"><a href="#词频：61" class="headerlink" title="词频：61"></a>词频：61</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">58</td>
+<td align="left">environmental</td>
+<td align="left">a. 环境的，周围的</td>
+</tr>
+<tr>
+<td align="left">59</td>
+<td align="left">impact</td>
+<td align="left">n. 碰撞，冲击；影响；vt. 挤入；撞击；对……产生影响</td>
+</tr>
+<tr>
+<td align="left">60</td>
+<td align="left">digital</td>
+<td align="left">a. 数字的；数据的</td>
+</tr>
+<tr>
+<td align="left">61</td>
+<td align="left">require</td>
+<td align="left">vt. 要求；需要；想要；命令</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>英语</category>
@@ -319,6 +526,26 @@
         <tag>英语</tag>
         <tag>CET4</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/11/27/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span> 
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>test</title>
