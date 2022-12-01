@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>algorithm_bubble</title>
+    <url>/2022/11/27/algorithm-bubble/</url>
+    <content><![CDATA[<h2 id="算法-冒泡排序"><a href="#算法-冒泡排序" class="headerlink" title="算法 - 冒泡排序"></a>算法 - 冒泡排序</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
+<thead>
+<tr>
+<th align="center">最好</th>
+<th align="center">平均</th>
+<th align="center">最坏</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">O( n^2)</td>
+<td align="center">O(n^2)</td>
+<td align="center">O(n^2)</td>
+</tr>
+</tbody></table>
+<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3><span id="more"></span>
+<h4 id="以升序为例"><a href="#以升序为例" class="headerlink" title="以升序为例"></a>以升序为例</h4><ul>
+<li>依次比较数组中相邻两个元素大小，若a[j] &gt; a[j+1],则交换两个元素。两两都比较一遍称一轮冒泡，结果是让最大的元素排至最后。</li>
+<li>重复以上步骤，直到整个数组有序。</li>
+</ul>
+<h4 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h4><ul>
+<li>每轮冒泡时，最后一次交换索引，可以作为下一轮冒泡的比较次数，如果这个值为零（0），表示整个数组有序，直接退出外层循环即可。</li>
+</ul>
+<h3 id="算法实现-代码实现"><a href="#算法实现-代码实现" class="headerlink" title="算法实现 - 代码实现"></a>算法实现 - 代码实现</h3><h4 id="输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。"><a href="#输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。" class="headerlink" title="输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。"></a>输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> a[j];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"><a href="#此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。" class="headerlink" title="此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"></a>此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> a.length - <span class="number">1</span>;    </span><br><span class="line">    <span class="keyword">while</span> (!n == <span class="number">0</span>) &#123;      </span><br><span class="line">       <span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">//记录最后一次交换索引位置</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       n = last;  <span class="comment">//更新比较的次数及退出条件</span></span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="初次代码"><a href="#初次代码" class="headerlink" title="初次代码"></a>初次代码</h3><h4 id="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"><a href="#存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源" class="headerlink" title="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"></a>存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="初次代码进行小优化"><a href="#初次代码进行小优化" class="headerlink" title="初次代码进行小优化"></a>初次代码进行小优化</h3><h4 id="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"><a href="#因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。" class="headerlink" title="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"></a>因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="type">boolean</span> <span class="variable">swapped</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span> - j; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            swapped = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果不交换，则说明已经排序完成，无需继续进行冒泡</span></span><br><span class="line">       <span class="keyword">if</span> (!swapped) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法（algorithm）</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>算法（algorithm）</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>algorithm_binarySearch</title>
     <url>/2022/11/27/algorithm-binarySearch/</url>
     <content><![CDATA[<h2 id="算法-二分查找"><a href="#算法-二分查找" class="headerlink" title="算法 - 二分查找"></a>算法 - 二分查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
@@ -42,45 +83,24 @@
       </tags>
   </entry>
   <entry>
-    <title>algorithm_bubble</title>
-    <url>/2022/11/27/algorithm-bubble/</url>
-    <content><![CDATA[<h2 id="算法-冒泡排序"><a href="#算法-冒泡排序" class="headerlink" title="算法 - 冒泡排序"></a>算法 - 冒泡排序</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
-<thead>
-<tr>
-<th align="center">最好</th>
-<th align="center">平均</th>
-<th align="center">最坏</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">O( n^2)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n^2)</td>
-</tr>
-</tbody></table>
-<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3><span id="more"></span>
-<h4 id="以升序为例"><a href="#以升序为例" class="headerlink" title="以升序为例"></a>以升序为例</h4><ul>
-<li>依次比较数组中相邻两个元素大小，若a[j] &gt; a[j+1],则交换两个元素。两两都比较一遍称一轮冒泡，结果是让最大的元素排至最后。</li>
-<li>重复以上步骤，直到整个数组有序。</li>
-</ul>
-<h4 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h4><ul>
-<li>每轮冒泡时，最后一次交换索引，可以作为下一轮冒泡的比较次数，如果这个值为零（0），表示整个数组有序，直接退出外层循环即可。</li>
-</ul>
-<h3 id="算法实现-代码实现"><a href="#算法实现-代码实现" class="headerlink" title="算法实现 - 代码实现"></a>算法实现 - 代码实现</h3><h4 id="输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。"><a href="#输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。" class="headerlink" title="输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。"></a>输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> a[j];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2022/11/27/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span> 
 
-<h4 id="此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"><a href="#此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。" class="headerlink" title="此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"></a>此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> a.length - <span class="number">1</span>;    </span><br><span class="line">    <span class="keyword">while</span> (!n == <span class="number">0</span>) &#123;      </span><br><span class="line">       <span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">//记录最后一次交换索引位置</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       n = last;  <span class="comment">//更新比较的次数及退出条件</span></span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="初次代码"><a href="#初次代码" class="headerlink" title="初次代码"></a>初次代码</h3><h4 id="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"><a href="#存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源" class="headerlink" title="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"></a>存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h3 id="初次代码进行小优化"><a href="#初次代码进行小优化" class="headerlink" title="初次代码进行小优化"></a>初次代码进行小优化</h3><h4 id="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"><a href="#因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。" class="headerlink" title="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"></a>因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="type">boolean</span> <span class="variable">swapped</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span> - j; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            swapped = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果不交换，则说明已经排序完成，无需继续进行冒泡</span></span><br><span class="line">       <span class="keyword">if</span> (!swapped) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法（algorithm）</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>算法（algorithm）</tag>
-        <tag>Java</tag>
-      </tags>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>英语词汇 - CET4</title>
@@ -517,6 +537,223 @@
 <td align="left">vt. 要求；需要；想要；命令</td>
 </tr>
 </tbody></table>
+<h4 id="词频：60"><a href="#词频：60" class="headerlink" title="词频：60"></a>词频：60</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">62</td>
+<td align="left">resource</td>
+<td align="left">n. 资源；物力；财力</td>
+</tr>
+<tr>
+<td align="left">63</td>
+<td align="left">community</td>
+<td align="left">n. 社区；社会团体；共同体</td>
+</tr>
+<tr>
+<td align="left">64</td>
+<td align="left">continue</td>
+<td align="left">vt. 延期；使延伸；使持续</td>
+</tr>
+</tbody></table>
+<h4 id="词频：59"><a href="#词频：59" class="headerlink" title="词频：59"></a>词频：59</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">65</td>
+<td align="left">difficult</td>
+<td align="left">a. 困难的；难做的；难解的</td>
+</tr>
+<tr>
+<td align="left">66</td>
+<td align="left">share</td>
+<td align="left">n. 股份 v. 共有；均摊；共用</td>
+</tr>
+<tr>
+<td align="left">67</td>
+<td align="left">produce</td>
+<td align="left">v. 生产；产生；制作；创作</td>
+</tr>
+<tr>
+<td align="left">68</td>
+<td align="left">access</td>
+<td align="left">n. 入口，出口；接近；vt. 接近，进入；接近，获取</td>
+</tr>
+</tbody></table>
+<h4 id="词频：57"><a href="#词频：57" class="headerlink" title="词频：57"></a>词频：57</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">69</td>
+<td align="left">instead</td>
+<td align="left">ad. 代替，顶替；反而</td>
+</tr>
+</tbody></table>
+<h4 id="词频：56"><a href="#词频：56" class="headerlink" title="词频：56"></a>词频：56</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">70</td>
+<td align="left">population</td>
+<td align="left">n. 人口；全体居民；种群</td>
+</tr>
+<tr>
+<td align="left">71</td>
+<td align="left">national</td>
+<td align="left">a. 国家的；国有的</td>
+</tr>
+<tr>
+<td align="left">72</td>
+<td align="left">actually</td>
+<td align="left">ad. 实际上；事实上；确实</td>
+</tr>
+<tr>
+<td align="left">73</td>
+<td align="left">save</td>
+<td align="left">vt. 节省；保存；储蓄</td>
+</tr>
+</tbody></table>
+<h4 id="词频：55"><a href="#词频：55" class="headerlink" title="词频：55"></a>词频：55</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">74</td>
+<td align="left">career</td>
+<td align="left">n. 生涯；职业；事业</td>
+</tr>
+<tr>
+<td align="left">75</td>
+<td align="left">interest</td>
+<td align="left">n. 兴趣，爱好；利益；利息；vt. 使产生兴趣</td>
+</tr>
+<tr>
+<td align="left">76</td>
+<td align="left">decision</td>
+<td align="left">n. 决定；果断；决议</td>
+</tr>
+<tr>
+<td align="left">77</td>
+<td align="left">financial</td>
+<td align="left">a. 财政的；财务的；金融的</td>
+</tr>
+</tbody></table>
+<h4 id="词频：54"><a href="#词频：54" class="headerlink" title="词频：54"></a>词频：54</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">78</td>
+<td align="left">professor</td>
+<td align="left">n. 教授了（大学的）讲师，教员</td>
+</tr>
+<tr>
+<td align="left">79</td>
+<td align="left">potential</td>
+<td align="left">a. 潜在的；有可能的；n. 潜力，潜能</td>
+</tr>
+</tbody></table>
+<h4 id="词频：53"><a href="#词频：53" class="headerlink" title="词频：53"></a>词频：53</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">80</td>
+<td align="left">traditional</td>
+<td align="left">a. 传统的</td>
+</tr>
+<tr>
+<td align="left">81</td>
+<td align="left">natural</td>
+<td align="left">a. 自然的；物质的；天生的</td>
+</tr>
+<tr>
+<td align="left">82</td>
+<td align="left">space</td>
+<td align="left">n. 空间，太空；空白，间隔</td>
+</tr>
+<tr>
+<td align="left">83</td>
+<td align="left">common</td>
+<td align="left">a. 普通的；通俗的；公共的；共有的</td>
+</tr>
+<tr>
+<td align="left">84</td>
+<td align="left">personal</td>
+<td align="left">a. 个人的，私人的；身体的；亲自的</td>
+</tr>
+<tr>
+<td align="left">85</td>
+<td align="left">political</td>
+<td align="left">a. 政治的；政党的</td>
+</tr>
+<tr>
+<td align="left">86</td>
+<td align="left">activity</td>
+<td align="left">n. 活动；活跃，敏捷</td>
+</tr>
+<tr>
+<td align="left">87</td>
+<td align="left">consider</td>
+<td align="left">v. 考虑；把（某人，某事）看作……</td>
+</tr>
+</tbody></table>
+<h4 id="词频：52"><a href="#词频：52" class="headerlink" title="词频：52"></a>词频：52</h4><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">88</td>
+<td align="left">private</td>
+<td align="left">a. 私有的，私人的；秘密的；内心的</td>
+</tr>
+<tr>
+<td align="left">89</td>
+<td align="left">century</td>
+<td align="left">n. 百年，一世纪</td>
+</tr>
+<tr>
+<td align="left">90</td>
+<td align="left">subject</td>
+<td align="left">n. 主题；学科，科目；主观；a. 须服从……的</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>英语</category>
@@ -526,26 +763,6 @@
         <tag>英语</tag>
         <tag>CET4</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/11/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span> 
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>test</title>
@@ -559,6 +776,20 @@
         <tag>hexo</tag>
         <tag>Git</tag>
         <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL数据库时区错误</title>
+    <url>/2022/11/30/mysql/</url>
+    <content><![CDATA[<p>MySQL数据库时区错误，执行以下语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set global time_zone = &#x27;+8:00&#x27;;</span><br><span class="line">set time_zone = &#x27;+8:00&#x27;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mysql</category>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
 </search>
