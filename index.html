@@ -213,10 +213,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-02-06 22:40:03 / 修改时间：22:45:41" itemprop="dateCreated datePublished" datetime="2023-02-06T22:40:03+08:00">2023-02-06</time>
+              <time title="创建时间：2023-02-06 22:40:03" itemprop="dateCreated datePublished" datetime="2023-02-06T22:40:03+08:00">2023-02-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-07 21:28:58" itemprop="dateModified" datetime="2023-02-07T21:28:58+08:00">2023-02-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
+              <span>5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -270,7 +276,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="常用数据库-库指令"><a href="#常用数据库-库指令" class="headerlink" title="常用数据库 - 库指令"></a>常用数据库 - 库指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT VERSION(); -- 查看数据库版本</span><br><span class="line">SHOW DATABASES; -- 查看mysql中的数据库名称</span><br><span class="line">CREATE DATABASE dbName; -- 创建数据库</span><br><span class="line">USE dbName; -- 使用数据库</span><br><span class="line">SELECT DATABASE(); -- 当前正在使用的数据库</span><br><span class="line">DROP DATABASE dbName; -- 删除指定数据库</span><br></pre></td></tr></table></figure>
+          <h3 id="常用数据库-库指令"><a href="#常用数据库-库指令" class="headerlink" title="常用数据库 - 库指令"></a>常用数据库 - 库指令</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> VERSION(); <span class="comment">-- 查看数据库版本</span></span><br><span class="line"><span class="keyword">SHOW</span> DATABASES; <span class="comment">-- 查看mysql中的数据库名称</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE dbName; <span class="comment">-- 创建数据库</span></span><br><span class="line">USE dbName; <span class="comment">-- 使用数据库</span></span><br><span class="line"><span class="keyword">SELECT</span> DATABASE(); <span class="comment">-- 当前正在使用的数据库</span></span><br><span class="line"><span class="keyword">DROP</span> DATABASE dbName; <span class="comment">-- 删除指定数据库</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/02/06/mysql-commands/#more" rel="contents">
@@ -328,7 +334,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-01 14:44:58" itemprop="dateModified" datetime="2022-12-01T14:44:58+08:00">2022-12-01</time>
+                <time title="修改时间：2023-02-07 20:09:27" itemprop="dateModified" datetime="2023-02-07T20:09:27+08:00">2023-02-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -383,7 +389,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="MySQL数据库时区错误，执行以下语句。"><a href="#MySQL数据库时区错误，执行以下语句。" class="headerlink" title="MySQL数据库时区错误，执行以下语句。"></a>MySQL数据库时区错误，执行以下语句。</h3><h4 id="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"><a href="#当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。" class="headerlink" title="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"></a>当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set global time_zone = &#x27;+8:00&#x27;;</span><br><span class="line">set time_zone = &#x27;+8:00&#x27;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+          <h3 id="MySQL数据库时区错误，执行以下语句。"><a href="#MySQL数据库时区错误，执行以下语句。" class="headerlink" title="MySQL数据库时区错误，执行以下语句。"></a>MySQL数据库时区错误，执行以下语句。</h3><h4 id="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"><a href="#当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。" class="headerlink" title="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"></a>当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> time_zone <span class="operator">=</span> <span class="string">&#x27;+8:00&#x27;</span>;</span><br><span class="line"><span class="keyword">set</span> time_zone <span class="operator">=</span> <span class="string">&#x27;+8:00&#x27;</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/30/mysql/#more" rel="contents">
@@ -441,7 +447,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-01 23:05:26" itemprop="dateModified" datetime="2022-12-01T23:05:26+08:00">2022-12-01</time>
+                <time title="修改时间：2023-02-07 20:13:05" itemprop="dateModified" datetime="2023-02-07T20:13:05+08:00">2023-02-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1103,13 +1109,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
         
