@@ -1090,4 +1090,41 @@
         <tag>数据库</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Truncate用法详解</title>
+    <url>/2023/02/07/mysql-truncate/</url>
+    <content><![CDATA[<h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>当我们想要清空某张表时，往往会使用truncate语句。大多时候我们只关心能否满足需求，而不去想这类语句的使用场景及注意事项。本篇文章主要介绍truncate语句的使用方法及注意事项。</p>
+<h4 id="1-truncate使用语法"><a href="#1-truncate使用语法" class="headerlink" title="1.truncate使用语法"></a>1.truncate使用语法</h4><p>truncate的作用是清空表或者说是截断表，只能作用于表。truncate的语法很简单，后面直接跟表名即可，例如： truncate table tbl_name 或者 truncate tbl_name 。</p>
+<p>执行truncate语句需要拥有表的drop权限，从逻辑上讲，truncate table类似于delete删除所有行的语句或drop table然后再create table语句的组合。为了实现高性能，它绕过了删除数据的DML方法，因此，它不能回滚。尽管truncate table与delete相似，但它被分类为DDL语句而不是DML语句。</p>
+<h4 id="2-truncate与drop-delete的对比"><a href="#2-truncate与drop-delete的对比" class="headerlink" title="2.truncate与drop,delete的对比"></a>2.truncate与drop,delete的对比</h4><p>上面说过truncate与delete，drop很相似，其实这三者还是与很大的不同的，下面简单对比下三者的异同。</p>
+<span id="more"></span>
+<ul>
+<li>truncate与drop是DDL语句，执行后无法回滚；delete是DML语句，可回滚。</li>
+<li>truncate只能作用于表；delete，drop可作用于表、视图等。</li>
+<li>truncate会清空表中的所有行，但表结构及其约束、索引等保持不变；drop会删除表的结构及其所依赖的约束、索引等。</li>
+<li>truncate会重置表的自增值；delete不会。</li>
+<li>truncate不会激活与表有关的删除触发器；delete可以。</li>
+<li>truncate后会使表和索引所占用的空间会恢复到初始大小；delete操作不会减少表或索引所占用的空间，drop语句将表所占用的空间全释放掉。</li>
+</ul>
+<h4 id="3-truncate使用场景及注意事项"><a href="#3-truncate使用场景及注意事项" class="headerlink" title="3.truncate使用场景及注意事项"></a>3.truncate使用场景及注意事项</h4><p>通过前面介绍，我们很容易得出truncate语句的使用场景，即该表数据完全不需要时可以用truncate。如果想删除部分数据用delete，注意带上where子句；如果想删除表，当然用drop；如果想保留表而将所有数据删除且和事务无关，用truncate即可；如果和事务有关，或者想触发trigger，还是用delete；如果是整理表内部的碎片，可以用truncate然后再重新插入数据。</p>
+<p>无论怎样，truncate表都是高危操作，特别是在生产环境要更加小心，下面列出几点注意事项，希望大家使用时可以做下参考。</p>
+<ul>
+<li>truncate无法通过binlog回滚。</li>
+<li>truncate会清空所有数据且执行速度很快。</li>
+<li>truncate不能对有外键约束引用的表使用。</li>
+<li>执行truncate需要drop权限，不建议给账号drop权限。</li>
+<li>执行truncate前一定要再三检查确认，最好提前备份下表数据。<br>————————————————<br>版权声明：本文为CSDN博主「kun_行者」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/wangkun_j/article/details/105291960">https://blog.csdn.net/wangkun_j/article/details/105291960</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>mysql</category>
+        <category>数据库</category>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
+        <tag>转载</tag>
+      </tags>
+  </entry>
 </search>
