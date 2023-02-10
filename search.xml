@@ -1051,17 +1051,22 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
+    <title>cmd 指令</title>
     <url>/2022/11/27/test/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="1、关机、重启、注销的cmd命令"><a href="#1、关机、重启、注销的cmd命令" class="headerlink" title="1、关机、重启、注销的cmd命令"></a>1、关机、重启、注销的cmd命令</h3><ul>
+<li>xx是关机延时时间 /秒；</li>
+<li>xx可以是00，即时关机。</li>
+<li>有时候windows提示n分钟后关机，但实际是你设定的时间<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">shutdown -s -t xx      <span class="comment">// 延时/即时 关机，xx为几秒</span></span><br><span class="line">at <span class="number">10</span>:<span class="number">00</span> shutdown -s   <span class="comment">// 定时关机</span></span><br><span class="line">shutdown -r -t xx      <span class="comment">// 延时/即时 重启，xx为几秒</span></span><br><span class="line">shutdown -l -t xx      <span class="comment">// 延时/即时 注销，xx为几秒</span></span><br><span class="line">shutdown -a            <span class="comment">// 取消关机，重启，注销等指令</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>说明：命令的s是指关机的意思，把s换为r，关机变为重启。同理，把s换为l，关机变为注销。<br>注意：命令行要各部分要有空格，否则不能运行。</p>
+]]></content>
       <categories>
-        <category>个人网站</category>
-        <category>教程</category>
+        <category>cmd</category>
+        <category>Windows</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>Git</tag>
-        <tag>Nginx</tag>
+        <tag>cmd</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
