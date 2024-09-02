@@ -1,1385 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>algorithm_binarySearch</title>
-    <url>/2022/11/27/algorithm-binarySearch/</url>
-    <content><![CDATA[<h2 id="算法-二分查找"><a href="#算法-二分查找" class="headerlink" title="算法 - 二分查找"></a>算法 - 二分查找</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
+    <title>hell</title>
+    <url>/2023/12/16/hell/</url>
+    <content><![CDATA[<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="第一章-Python-基础"><a href="#第一章-Python-基础" class="headerlink" title="第一章 Python 基础"></a>第一章 Python 基础</h2><h4 id="1、Python中的常用的6种值（数据）类型"><a href="#1、Python中的常用的6种值（数据）类型" class="headerlink" title="1、Python中的常用的6种值（数据）类型"></a>1、Python中的常用的6种值（数据）类型</h4><h4 id="有-Number、String、List、Tuple、Set、Dictionary，具体如下"><a href="#有-Number、String、List、Tuple、Set、Dictionary，具体如下" class="headerlink" title="有 Number、String、List、Tuple、Set、Dictionary，具体如下"></a>有 Number、String、List、Tuple、Set、Dictionary，具体如下</h4><table>
 <thead>
 <tr>
-<th align="center">最好</th>
-<th align="center">平均</th>
-<th align="center">最坏</th>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">O(1)</td>
-<td align="center">O(logn)</td>
-<td align="center">O(n)</td>
+<td><strong>数字（Number）</strong></td>
+<td>整数（int）、浮点数（float）、复数（complex）、布尔（bool）</td>
+<td>整数（int），如：10，-20；浮点数（float），如：13.14、-13.14；<strong>复数（comflex），如：4+3j，以j 结尾表示复数</strong>；布尔（bool），如：True 1，False 0;</td>
+</tr>
+<tr>
+<td><strong>字符串（String）</strong></td>
+<td>描述文本的一种数据类型</td>
+<td>字符串（String）由任意数量的字符组成；</td>
+</tr>
+<tr>
+<td><strong>列表（List）</strong></td>
+<td><strong>有序</strong>的<strong>可变</strong>序列</td>
+<td>Python中使用最频繁的数据类型，可<strong>有序</strong>记录一堆数据；</td>
+</tr>
+<tr>
+<td><strong>元组（Tuple）</strong></td>
+<td><strong>有序</strong>的<strong>不可变</strong>序列</td>
+<td>可有序记录一堆<strong>不可变</strong>的Python数据集合；</td>
+</tr>
+<tr>
+<td><strong>集合（Set）</strong></td>
+<td><strong>无序</strong>的<strong>不重复</strong>集合</td>
+<td>可无序记录一堆<strong>不重复</strong>的Python数据集合；</td>
+</tr>
+<tr>
+<td><strong>字典（Dictionary）</strong></td>
+<td><strong>无序Key-Value</strong>集合</td>
+<td>可无序记录一推Key-Value型的Python数据集合</td>
 </tr>
 </tbody></table>
-<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3><span id="more"></span>
+<h4 id="2、String-字符串"><a href="#2、String-字符串" class="headerlink" title="2、String 字符串"></a>2、String 字符串</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">又称文本，是由任意数量的字符如中文、英文、各类符号、数字等组成。所以叫做字符的串。</span><br><span class="line">Python中，字符串需要用双引号（&quot;）包围起来，被引号包围起来的，都是字符串。</span><br><span class="line">如：&quot;Python&quot;；</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3、注释的分类"><a href="#3、注释的分类" class="headerlink" title="3、注释的分类"></a>3、注释的分类</h4><ul>
+<li><p>单行注释：以<strong>“#” 开头</strong>，中间一个“<strong>空格</strong>”，右边的文字当作说明，而不是真正要执行的程序，起辅助说明作用。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 我是单行注释</span></span><br><span class="line"><span class="built_in">print</span>（<span class="string">&quot;hello&quot;</span>）</span><br></pre></td></tr></table></figure></li>
+<li><p>多行注释：以 一对三个双引号 引起来的内容（””” 注释内容 “””）来说明一段代码的作用。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">我是多行注释</span></span><br><span class="line"><span class="string">第二行</span></span><br><span class="line"><span class="string">第三行</span></span><br><span class="line"><span class="string">print(666)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>（<span class="string">&quot;hello&quot;</span>）</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4、什么是变量"><a href="#4、什么是变量" class="headerlink" title="4、什么是变量"></a>4、什么是变量</h4><ul>
+<li>变量就是在程序运行时，记录数据用的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">演示Python 中变量的相关操作</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 定义一个变量，用来记录钱包余额</span></span><br><span class="line">money = <span class="number">50</span></span><br><span class="line"><span class="comment"># 通过print 语句，输出变量记录的内容</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;钱包还有：&quot;</span>, money)</span><br><span class="line"><span class="comment"># 买了冰淇淋，花费了10 元</span></span><br><span class="line">money = money - <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;买了冰激凌后，钱包还有:&quot;</span>, money, <span class="string">&quot;元&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>前提：已排序的数组A；</li>
-<li>定义左边界L，右边界R，确定搜索范围，循环执行二分查找（3，4步）；</li>
-<li>获取中间索引M = (L + R) &gt;&gt;&gt; 1;</li>
-<li>中间索引的值A[M] 与待搜索的值T 进行比较<ul>
-<li>A[M] == T 表示找到，返回中间索引。</li>
-<li>A[M] &gt; T 中间值右侧的其他元素都大于T，无需比较，中间索引左边去找， M - 1设置为右边界，重新查找；</li>
-<li>A[M] &gt; T 中间值右侧的其他元素都小T，无需比较，中间索引右边去找， M + 1设置为左边界，重新查找；</li>
+<li><p>格式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">变量名 = 变量值</span><br></pre></td></tr></table></figure></li>
+<li><p>特征</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">变量的值是可以改变的</span><br></pre></td></tr></table></figure></li>
+<li><p>print 语句如何输出多份内容</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">print（内容1, 内容2, 内容3, ……, 内容n）</span><br></pre></td></tr></table></figure></li>
+<li><p>Python 中如何做减法</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">使用符号 “—” 即可完成减法运算；</span><br><span class="line">拓展：+ 、 - 、 * 、 / </span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li>当L &gt; R 时，表示没有找到，应结束循环；</li>
-</ul>
-<h3 id="算法实现-代码实现"><a href="#算法实现-代码实现" class="headerlink" title="算法实现 - 代码实现"></a>算法实现 - 代码实现</h3><h4 id="输入：一个有序的数组-a，一个待查找的值-t"><a href="#输入：一个有序的数组-a，一个待查找的值-t" class="headerlink" title="输入：一个有序的数组 a，一个待查找的值 t"></a>输入：一个有序的数组 a，一个待查找的值 t</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> t)</span> &#123;    </span><br><span class="line">    <span class="comment">//l 为左指针，r为右指针，m为中间指针</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>, r = a.length - <span class="number">1</span>, m;    </span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;        </span><br><span class="line">        m = (l + r) &gt;&gt;&gt; <span class="number">1</span>;  <span class="comment">//使用移位可以避免整数溢出问题     </span></span><br><span class="line">        <span class="keyword">if</span> (a[m] == t) &#123;            </span><br><span class="line">             <span class="keyword">return</span> m;       </span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a[m] &gt; t) &#123;            </span><br><span class="line">            r = m - <span class="number">1</span>;       </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;            </span><br><span class="line">            l = m + <span class="number">1</span>;       </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><h4 id="二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）"><a href="#二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）" class="headerlink" title="二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）"></a>二分查找有诸多变体，一旦使用变体实现代码，则左右边界的选取会有变化，进而会影响中间过程的推算（手动推算时）</h4>]]></content>
-      <categories>
-        <category>算法（algorithm）</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>算法（algorithm）</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>algorithm_bubble</title>
-    <url>/2022/11/27/algorithm-bubble/</url>
-    <content><![CDATA[<h2 id="算法-冒泡排序"><a href="#算法-冒泡排序" class="headerlink" title="算法 - 冒泡排序"></a>算法 - 冒泡排序</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><table>
-<thead>
-<tr>
-<th align="center">最好</th>
-<th align="center">平均</th>
-<th align="center">最坏</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">O( n^2)</td>
-<td align="center">O(n^2)</td>
-<td align="center">O(n^2)</td>
-</tr>
-</tbody></table>
-<h3 id="算法实现-文字描述"><a href="#算法实现-文字描述" class="headerlink" title="算法实现 - 文字描述"></a>算法实现 - 文字描述</h3><span id="more"></span>
-<h4 id="以升序为例"><a href="#以升序为例" class="headerlink" title="以升序为例"></a>以升序为例</h4><ul>
-<li>依次比较数组中相邻两个元素大小，若a[j] &gt; a[j+1],则交换两个元素。两两都比较一遍称一轮冒泡，结果是让最大的元素排至最后。</li>
-<li>重复以上步骤，直到整个数组有序。</li>
-</ul>
-<h4 id="优化方式"><a href="#优化方式" class="headerlink" title="优化方式"></a>优化方式</h4><ul>
-<li>每轮冒泡时，最后一次交换索引，可以作为下一轮冒泡的比较次数，如果这个值为零（0），表示整个数组有序，直接退出外层循环即可。</li>
-</ul>
-<h3 id="算法实现-代码实现"><a href="#算法实现-代码实现" class="headerlink" title="算法实现 - 代码实现"></a>算法实现 - 代码实现</h3><h4 id="输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。"><a href="#输入：一个需要排序的数组-a，swap-为数组a中-第i个元素与第j个元素交换（提取出来共用）。" class="headerlink" title="输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。"></a>输入：一个需要排序的数组 a，swap() 为数组a中 第i个元素与第j个元素交换（提取出来共用）。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> a[j];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5、数据类型"><a href="#5、数据类型" class="headerlink" title="5、数据类型"></a>5、数据类型</h4><ul>
+<li><p>type（）</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">可以通过type()语句来得到数据的类型：</span><br><span class="line">语法：</span><br><span class="line">type(被查看类型的数据)</span><br></pre></td></tr></table></figure>
 
-<h4 id="此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"><a href="#此-bubble-为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。" class="headerlink" title="此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。"></a>此 bubble() 为最终改进后的冒泡排序方法。对原算法进行了改进，上次的小优化仍有改进空间，即优化方式所述。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> a.length - <span class="number">1</span>;    </span><br><span class="line">    <span class="keyword">while</span> (!n == <span class="number">0</span>) &#123;      </span><br><span class="line">       <span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">//记录最后一次交换索引位置</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       n = last;  <span class="comment">//更新比较的次数及退出条件</span></span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="初次代码"><a href="#初次代码" class="headerlink" title="初次代码"></a>初次代码</h3><h4 id="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"><a href="#存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源" class="headerlink" title="存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源"></a>存在数据已排序完成，但仍会继续执行冒泡代码块，浪费时间和资源</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            last = i;  <span class="comment">//得到前一个索引，即交换前的索引</span></span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="初次代码进行小优化"><a href="#初次代码进行小优化" class="headerlink" title="初次代码进行小优化"></a>初次代码进行小优化</h3><h4 id="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"><a href="#因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。" class="headerlink" title="因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。"></a>因初次代码，存在数据已排序完成，但仍会继续执行冒泡代码块，修改方向：当有一轮数据不再交换时，则说明已排序完成。无需继续执行。</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubble</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span>; j++) &#123;   </span><br><span class="line">       <span class="comment">//一轮冒泡</span></span><br><span class="line">       <span class="type">boolean</span> <span class="variable">swapped</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span> - j; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            swap(a, i, i+<span class="number">1</span>);</span><br><span class="line">            swapped = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果不交换，则说明已经排序完成，无需继续进行冒泡</span></span><br><span class="line">       <span class="keyword">if</span> (!swapped) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法（algorithm）</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>算法（algorithm）</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>英语词汇 - CET4</title>
-    <url>/2022/11/28/english-CET4/</url>
-    <content><![CDATA[<h2 id="英语-CET4"><a href="#英语-CET4" class="headerlink" title="英语 - CET4"></a>英语 - CET4</h2><h3 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h3><h4 id="词频：203"><a href="#词频：203" class="headerlink" title="词频：203"></a>词频：203</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">develop</td>
-<td align="left">vt. 发展；开发</td>
-</tr>
-</tbody></table>
-<h4 id="词频：120-200"><a href="#词频：120-200" class="headerlink" title="词频：120 - 200"></a>词频：120 - 200</h4><span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在print语句中，直接输出类型信息</span></span><br><span class="line"><span class="comment"># 打印值 &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用变量存储type()的结果（返回值）：</span></span><br><span class="line">string_type = <span class="built_in">type</span>(<span class="string">&quot;字符串&quot;</span>)</span><br><span class="line"><span class="comment"># 打印值 &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(string_type)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="6、数据类型转换"><a href="#6、数据类型转换" class="headerlink" title="6、数据类型转换"></a>6、数据类型转换</h4><ul>
+<li><p>为什么要转换类型</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">数据类型转换，将会是我们以后经常使用的功能。如：</span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> 从文件中读取的数字，默认是字符串，我们需要转换成数据类型；</span><br><span class="line"><span class="bullet">*</span> 后续学习的input()语句，默认结果是字符串，若需要数字也需要转换；</span><br><span class="line"><span class="bullet">*</span> 将数字转换成字符串用以写出到外部系统；</span><br><span class="line"><span class="bullet">*</span> 等等</span><br></pre></td></tr></table></figure></li>
+<li><p>常见的转换语句</p>
 <table>
 <thead>
 <tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
+<th>语句（函数）</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">2</td>
-<td align="left">research</td>
-<td align="left">n. 研究；探测；调查</td>
+<td>int(x)</td>
+<td>将x 转换为一个整数</td>
 </tr>
 <tr>
-<td align="left">3</td>
-<td align="left">benefit</td>
-<td align="left">n. 利益，好处；vt. 有益于</td>
+<td>float(x)</td>
+<td>将x 转换为一个浮点数</td>
 </tr>
 <tr>
-<td align="left">4</td>
-<td align="left">increase</td>
-<td align="left">vt.&amp;vi. 增加，增大，增多</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">researcher</td>
-<td align="left">n. 研究员，调查者</td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">economic</td>
-<td align="left">a. 经济的；经济学的</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">technology</td>
-<td align="left">n. 科技（总称）；工业技术</td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">likely</td>
-<td align="left">a. 可能的；适合的；有希望的</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">different</td>
-<td align="left">a. 不同的；各式各样的</td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">government</td>
-<td align="left">n. 政府；管辖，治理</td>
+<td>str(x)</td>
+<td>将对象x 转换为字符串</td>
 </tr>
 </tbody></table>
-<h4 id="词频：118"><a href="#词频：118" class="headerlink" title="词频：118"></a>词频：118</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">11</td>
-<td align="left">according</td>
-<td align="left">ad. 依照</td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">global</td>
-<td align="left">a. 全球的；整体的，全局的</td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">last</td>
-<td align="left">a. 最后的；唯一剩下的；vi. 持续</td>
-</tr>
-</tbody></table>
-<h4 id="词频：100-116"><a href="#词频：100-116" class="headerlink" title="词频：100 - 116"></a>词频：100 - 116</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">14</td>
-<td align="left">company</td>
-<td align="left">n. 公司；作伴，伴侣</td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left">energy</td>
-<td align="left">n. 能量；活力；精力；精神</td>
-</tr>
-<tr>
-<td align="left">16</td>
-<td align="left">economy</td>
-<td align="left">n. 节约；经济；理财；秩序</td>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left">recent</td>
-<td align="left">a. 最近的；新近的；近代的</td>
-</tr>
-</tbody></table>
-<h4 id="词频：90-100"><a href="#词频：90-100" class="headerlink" title="词频：90 - 100"></a>词频：90 - 100</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">18</td>
-<td align="left">rule</td>
-<td align="left">n. 规则；统治，支配；v.控制，统治，支配</td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left">industry</td>
-<td align="left">n. 工业；产业</td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left">information</td>
-<td align="left">n. 信息；通知；消息；知识</td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left">great</td>
-<td align="left">a. 伟大的；显著的；很多的；重大的</td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left">effect</td>
-<td align="left">n. 影响；效果；印象</td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left">suggest</td>
-<td align="left">vt. 建议；提议；暗示；使想起</td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left">level</td>
-<td align="left">n. 水平；水平线，水平面</td>
-</tr>
-</tbody></table>
-<h4 id="词频：73-89"><a href="#词频：73-89" class="headerlink" title="词频：73 - 89"></a>词频：73 - 89</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">25</td>
-<td align="left">important</td>
-<td align="left">a. 重要的；有势力的</td>
-</tr>
-<tr>
-<td align="left">26</td>
-<td align="left">experience</td>
-<td align="left">n. 经验，体检；经历；vt. 亲身经历</td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left">product</td>
-<td align="left">n. 产品；结果；作品</td>
-</tr>
-<tr>
-<td align="left">28</td>
-<td align="left">growth</td>
-<td align="left">n. 生长；增长</td>
-</tr>
-<tr>
-<td align="left">29</td>
-<td align="left">provide</td>
-<td align="left">v. 提供，供给</td>
-</tr>
-<tr>
-<td align="left">30</td>
-<td align="left">opportunity</td>
-<td align="left">n. 机会</td>
-</tr>
-</tbody></table>
-<h4 id="词频：72"><a href="#词频：72" class="headerlink" title="词频：72"></a>词频：72</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">31</td>
-<td align="left">enough</td>
-<td align="left">ad. 充足地；十分地；a. 充足的；足够的</td>
-</tr>
-<tr>
-<td align="left">32</td>
-<td align="left">knowledge</td>
-<td align="left">n. 了解，理解；知识</td>
-</tr>
-<tr>
-<td align="left">33</td>
-<td align="left">consumer</td>
-<td align="left">n. 消费者，顾客</td>
-</tr>
-<tr>
-<td align="left">34</td>
-<td align="left">challenge</td>
-<td align="left">n. 挑战；质疑；vt. 质疑；向……挑战</td>
-</tr>
-<tr>
-<td align="left">35</td>
-<td align="left">risk</td>
-<td align="left">n. 危险，冒险；vt. 冒……的危险</td>
-</tr>
-</tbody></table>
-<h4 id="词频：69-71"><a href="#词频：69-71" class="headerlink" title="词频：69 - 71"></a>词频：69 - 71</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">36</td>
-<td align="left">support</td>
-<td align="left">vt. 支持；帮助；支持；维持</td>
-</tr>
-<tr>
-<td align="left">37</td>
-<td align="left">average</td>
-<td align="left">a. 平常的；平均的</td>
-</tr>
-<tr>
-<td align="left">38</td>
-<td align="left">against</td>
-<td align="left">prep. 反对；对……什么不利</td>
-</tr>
-<tr>
-<td align="left">39</td>
-<td align="left">environment</td>
-<td align="left">n. 环境，外界</td>
-</tr>
-<tr>
-<td align="left">40</td>
-<td align="left">generation</td>
-<td align="left">n. 一代人；时代</td>
-</tr>
-</tbody></table>
-<h4 id="词频：68"><a href="#词频：68" class="headerlink" title="词频：68"></a>词频：68</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">41</td>
-<td align="left">report</td>
-<td align="left">n. 报告；v. 报道；公布；宣告</td>
-</tr>
-<tr>
-<td align="left">42</td>
-<td align="left">almost</td>
-<td align="left">ad. 几乎，差不多；将近；快要</td>
-</tr>
-<tr>
-<td align="left">43</td>
-<td align="left">issue</td>
-<td align="left">n. 问题；发行物；流出；vt. 发行；发布；流出</td>
-</tr>
-</tbody></table>
-<h4 id="词频：67"><a href="#词频：67" class="headerlink" title="词频：67"></a>词频：67</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">44</td>
-<td align="left">climate</td>
-<td align="left">n. 气候；氛围；状况；局势</td>
-</tr>
-</tbody></table>
-<h4 id="词频：66"><a href="#词频：66" class="headerlink" title="词频：66"></a>词频：66</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">45</td>
-<td align="left">believe</td>
-<td align="left">vt. 相信；认为；信任</td>
-</tr>
-<tr>
-<td align="left">46</td>
-<td align="left">individual</td>
-<td align="left">a. 个人的；独特的；个别的；n. 个人</td>
-</tr>
-<tr>
-<td align="left">47</td>
-<td align="left">academic</td>
-<td align="left">a. 学院的，大学的；文学的；n.学者</td>
-</tr>
-<tr>
-<td align="left">48</td>
-<td align="left">relationship</td>
-<td align="left">n. 关系；联系；浪漫关系；血缘关系</td>
-</tr>
-<tr>
-<td align="left">49</td>
-<td align="left">current</td>
-<td align="left">a. 现在的；最近的；流行的</td>
-</tr>
-</tbody></table>
-<h4 id="词频：63-65"><a href="#词频：63-65" class="headerlink" title="词频：63 - 65"></a>词频：63 - 65</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">50</td>
-<td align="left">measure</td>
-<td align="left">vt. 测量；估量；n. 测量，测度；措施</td>
-</tr>
-<tr>
-<td align="left">51</td>
-<td align="left">sense</td>
-<td align="left">n. 感觉；意识，观念；理性；vt. 感到；理解，领会</td>
-</tr>
-<tr>
-<td align="left">52</td>
-<td align="left">control</td>
-<td align="left">vt. 控制；管理；配；n. 支配权；管理权</td>
-</tr>
-</tbody></table>
-<h4 id="词频：62"><a href="#词频：62" class="headerlink" title="词频：62"></a>词频：62</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">53</td>
-<td align="left">process</td>
-<td align="left">n. 过程；做事方法；vt. 加工；处理；审阅</td>
-</tr>
-<tr>
-<td align="left">54</td>
-<td align="left">attention</td>
-<td align="left">n. 注意，注意力；照料，关怀</td>
-</tr>
-<tr>
-<td align="left">55</td>
-<td align="left">medical</td>
-<td align="left">a. 医学的；医药的；医疗的</td>
-</tr>
-<tr>
-<td align="left">56</td>
-<td align="left">effort</td>
-<td align="left">n. 努力，尝试；工作；成就</td>
-</tr>
-<tr>
-<td align="left">57</td>
-<td align="left">graduate</td>
-<td align="left">vi. 渐渐变为；取得资格；vt. 授予学位或毕业证书；n. 大学毕业生</td>
-</tr>
-</tbody></table>
-<h4 id="词频：61"><a href="#词频：61" class="headerlink" title="词频：61"></a>词频：61</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">58</td>
-<td align="left">environmental</td>
-<td align="left">a. 环境的，周围的</td>
-</tr>
-<tr>
-<td align="left">59</td>
-<td align="left">impact</td>
-<td align="left">n. 碰撞，冲击；影响；vt. 挤入；撞击；对……产生影响</td>
-</tr>
-<tr>
-<td align="left">60</td>
-<td align="left">digital</td>
-<td align="left">a. 数字的；数据的</td>
-</tr>
-<tr>
-<td align="left">61</td>
-<td align="left">require</td>
-<td align="left">vt. 要求；需要；想要；命令</td>
-</tr>
-</tbody></table>
-<h4 id="词频：60"><a href="#词频：60" class="headerlink" title="词频：60"></a>词频：60</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">62</td>
-<td align="left">resource</td>
-<td align="left">n. 资源；物力；财力</td>
-</tr>
-<tr>
-<td align="left">63</td>
-<td align="left">community</td>
-<td align="left">n. 社区；社会团体；共同体</td>
-</tr>
-<tr>
-<td align="left">64</td>
-<td align="left">continue</td>
-<td align="left">vt. 延期；使延伸；使持续</td>
-</tr>
-</tbody></table>
-<h4 id="词频：59"><a href="#词频：59" class="headerlink" title="词频：59"></a>词频：59</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">65</td>
-<td align="left">difficult</td>
-<td align="left">a. 困难的；难做的；难解的</td>
-</tr>
-<tr>
-<td align="left">66</td>
-<td align="left">share</td>
-<td align="left">n. 股份 v. 共有；均摊；共用</td>
-</tr>
-<tr>
-<td align="left">67</td>
-<td align="left">produce</td>
-<td align="left">v. 生产；产生；制作；创作</td>
-</tr>
-<tr>
-<td align="left">68</td>
-<td align="left">access</td>
-<td align="left">n. 入口，出口；接近；vt. 接近，进入；接近，获取</td>
-</tr>
-</tbody></table>
-<h4 id="词频：57"><a href="#词频：57" class="headerlink" title="词频：57"></a>词频：57</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">69</td>
-<td align="left">instead</td>
-<td align="left">ad. 代替，顶替；反而</td>
-</tr>
-</tbody></table>
-<h4 id="词频：56"><a href="#词频：56" class="headerlink" title="词频：56"></a>词频：56</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">70</td>
-<td align="left">population</td>
-<td align="left">n. 人口；全体居民；种群</td>
-</tr>
-<tr>
-<td align="left">71</td>
-<td align="left">national</td>
-<td align="left">a. 国家的；国有的</td>
-</tr>
-<tr>
-<td align="left">72</td>
-<td align="left">actually</td>
-<td align="left">ad. 实际上；事实上；确实</td>
-</tr>
-<tr>
-<td align="left">73</td>
-<td align="left">save</td>
-<td align="left">vt. 节省；保存；储蓄</td>
-</tr>
-</tbody></table>
-<h4 id="词频：55"><a href="#词频：55" class="headerlink" title="词频：55"></a>词频：55</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">74</td>
-<td align="left">career</td>
-<td align="left">n. 生涯；职业；事业</td>
-</tr>
-<tr>
-<td align="left">75</td>
-<td align="left">interest</td>
-<td align="left">n. 兴趣，爱好；利益；利息；vt. 使产生兴趣</td>
-</tr>
-<tr>
-<td align="left">76</td>
-<td align="left">decision</td>
-<td align="left">n. 决定；果断；决议</td>
-</tr>
-<tr>
-<td align="left">77</td>
-<td align="left">financial</td>
-<td align="left">a. 财政的；财务的；金融的</td>
-</tr>
-</tbody></table>
-<h4 id="词频：54"><a href="#词频：54" class="headerlink" title="词频：54"></a>词频：54</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">78</td>
-<td align="left">professor</td>
-<td align="left">n. 教授了（大学的）讲师，教员</td>
-</tr>
-<tr>
-<td align="left">79</td>
-<td align="left">potential</td>
-<td align="left">a. 潜在的；有可能的；n. 潜力，潜能</td>
-</tr>
-</tbody></table>
-<h4 id="词频：53"><a href="#词频：53" class="headerlink" title="词频：53"></a>词频：53</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">80</td>
-<td align="left">traditional</td>
-<td align="left">a. 传统的</td>
-</tr>
-<tr>
-<td align="left">81</td>
-<td align="left">natural</td>
-<td align="left">a. 自然的；物质的；天生的</td>
-</tr>
-<tr>
-<td align="left">82</td>
-<td align="left">space</td>
-<td align="left">n. 空间，太空；空白，间隔</td>
-</tr>
-<tr>
-<td align="left">83</td>
-<td align="left">common</td>
-<td align="left">a. 普通的；通俗的；公共的；共有的</td>
-</tr>
-<tr>
-<td align="left">84</td>
-<td align="left">personal</td>
-<td align="left">a. 个人的，私人的；身体的；亲自的</td>
-</tr>
-<tr>
-<td align="left">85</td>
-<td align="left">political</td>
-<td align="left">a. 政治的；政党的</td>
-</tr>
-<tr>
-<td align="left">86</td>
-<td align="left">activity</td>
-<td align="left">n. 活动；活跃，敏捷</td>
-</tr>
-<tr>
-<td align="left">87</td>
-<td align="left">consider</td>
-<td align="left">v. 考虑；把（某人，某事）看作……</td>
-</tr>
-</tbody></table>
-<h4 id="词频：52"><a href="#词频：52" class="headerlink" title="词频：52"></a>词频：52</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">88</td>
-<td align="left">private</td>
-<td align="left">a. 私有的，私人的；秘密的；内心的</td>
-</tr>
-<tr>
-<td align="left">89</td>
-<td align="left">century</td>
-<td align="left">n. 百年，一世纪</td>
-</tr>
-<tr>
-<td align="left">90</td>
-<td align="left">subject</td>
-<td align="left">n. 主题；学科，科目；主观；a. 须服从……的</td>
-</tr>
-</tbody></table>
-<h4 id="词频：51"><a href="#词频：51" class="headerlink" title="词频：51"></a>词频：51</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">91</td>
-<td align="left">security</td>
-<td align="left">n. 安全；保证，担保；保护，防护</td>
-</tr>
-<tr>
-<td align="left">92</td>
-<td align="left">affect</td>
-<td align="left">vt. 影响；假装；感动</td>
-</tr>
-</tbody></table>
-<h4 id="词频：50"><a href="#词频：50" class="headerlink" title="词频：50"></a>词频：50</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">93</td>
-<td align="left">recession</td>
-<td align="left">n. 经济衰退，不景气；后退，撤退</td>
-</tr>
-<tr>
-<td align="left">94</td>
-<td align="left">nation</td>
-<td align="left">n. 国家；民族；国民；政府</td>
-</tr>
-<tr>
-<td align="left">95</td>
-<td align="left">concern</td>
-<td align="left">vt. 涉及；使关心；参与；n. 关心；关系，有关</td>
-</tr>
-<tr>
-<td align="left">96</td>
-<td align="left">position</td>
-<td align="left">n. 位置，方位；地位，职位</td>
-</tr>
-<tr>
-<td align="left">97</td>
-<td align="left">evidence</td>
-<td align="left">n. 证词；证据；迹象；明显</td>
-</tr>
-</tbody></table>
-<h4 id="词频：49"><a href="#词频：49" class="headerlink" title="词频：49"></a>词频：49</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">98</td>
-<td align="left">demand</td>
-<td align="left">vt.&amp;n. 要求，请求；需要</td>
-</tr>
-<tr>
-<td align="left">99</td>
-<td align="left">emission</td>
-<td align="left">n. 排放；排放物，散发物；（书刊）发行</td>
-</tr>
-<tr>
-<td align="left">100</td>
-<td align="left">advance</td>
-<td align="left">vi. 增加；向前推；上涨；n.增长；上涨</td>
-</tr>
-<tr>
-<td align="left">101</td>
-<td align="left">expect</td>
-<td align="left">vt. 期望；预料；要求；认为（某事）会发生</td>
-</tr>
-</tbody></table>
-<h4 id="词频：48"><a href="#词频：48" class="headerlink" title="词频：48"></a>词频：48</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">102</td>
-<td align="left">pressure</td>
-<td align="left">n. 压力</td>
-</tr>
-</tbody></table>
-<h4 id="词频：47"><a href="#词频：47" class="headerlink" title="词频：47"></a>词频：47</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">103</td>
-<td align="left">mental</td>
-<td align="left">a. 内心的，精神的；智慧的，智/脑力的</td>
-</tr>
-<tr>
-<td align="left">104</td>
-<td align="left">certain</td>
-<td align="left">a. 某一；必然的；已确定的</td>
-</tr>
-<tr>
-<td align="left">105</td>
-<td align="left">understand</td>
-<td align="left">v. 懂，理解</td>
-</tr>
-</tbody></table>
-<h4 id="词频：46"><a href="#词频：46" class="headerlink" title="词频：46"></a>词频：46</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">106</td>
-<td align="left">positive</td>
-<td align="left">a. 积极的；确实的，肯定的；正的</td>
-</tr>
-<tr>
-<td align="left">107</td>
-<td align="left">crisis</td>
-<td align="left">n. 危机；危难时刻；决定性时刻</td>
-</tr>
-<tr>
-<td align="left">108</td>
-<td align="left">reduce</td>
-<td align="left">vt. 减少；缩小</td>
-</tr>
-<tr>
-<td align="left">109</td>
-<td align="left">simply</td>
-<td align="left">ad. 简单的，朴素的；不过，仅仅</td>
-</tr>
-<tr>
-<td align="left">110</td>
-<td align="left">international</td>
-<td align="left">a. 国际的；国际关系的</td>
-</tr>
-<tr>
-<td align="left">111</td>
-<td align="left">expert</td>
-<td align="left">n. 专家，能手；权威；行家；高手</td>
-</tr>
-<tr>
-<td align="left">112</td>
-<td align="left">professional</td>
-<td align="left">a. 专业的；职业的；n. 专业人士</td>
-</tr>
-<tr>
-<td align="left">113</td>
-<td align="left">degree</td>
-<td align="left">n. 度，度数；程度；学位</td>
-</tr>
-<tr>
-<td align="left">114</td>
-<td align="left">management</td>
-<td align="left">n. 管理；管理人员；管理技巧</td>
-</tr>
-<tr>
-<td align="left">115</td>
-<td align="left">remain</td>
-<td align="left">n. 剩余物；残余；遗迹；v.留下；保持；依然</td>
-</tr>
-<tr>
-<td align="left">116</td>
-<td align="left">focus</td>
-<td align="left">v. 集中，（使）聚集；n.焦点；中心</td>
-</tr>
-<tr>
-<td align="left">117</td>
-<td align="left">claim</td>
-<td align="left">vt. 声称；断言；需要；n.要求；声称；断言</td>
-</tr>
-</tbody></table>
-<h4 id="词频：44"><a href="#词频：44" class="headerlink" title="词频：44"></a>词频：44</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">118</td>
-<td align="left">especially</td>
-<td align="left">ad. 尤其地；主要地，格外地</td>
-</tr>
-<tr>
-<td align="left">119</td>
-<td align="left">negative</td>
-<td align="left">a. 消极的，否认的</td>
-</tr>
-</tbody></table>
-<h4 id="词频：43"><a href="#词频：43" class="headerlink" title="词频：43"></a>词频：43</h4><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">120</td>
-<td align="left">alcohol</td>
-<td align="left">n. 乙醇，酒精；含酒精的饮料</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>英语</category>
-        <category>CET4</category>
-      </categories>
-      <tags>
-        <tag>英语</tag>
-        <tag>CET4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/11/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span> 
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MySQL数据库基础</title>
-    <url>/2022/11/30/mysql/</url>
-    <content><![CDATA[<h3 id="MySQL数据库时区错误，执行以下语句。"><a href="#MySQL数据库时区错误，执行以下语句。" class="headerlink" title="MySQL数据库时区错误，执行以下语句。"></a>MySQL数据库时区错误，执行以下语句。</h3><h4 id="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"><a href="#当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。" class="headerlink" title="当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。"></a>当页面报时区错误时；可使用如下代码，在Navicat中执行，可解决。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> time_zone <span class="operator">=</span> <span class="string">&#x27;+8:00&#x27;</span>;</span><br><span class="line"><span class="keyword">set</span> time_zone <span class="operator">=</span> <span class="string">&#x27;+8:00&#x27;</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h3 id="MySQL-创建数据库"><a href="#MySQL-创建数据库" class="headerlink" title="MySQL 创建数据库"></a>MySQL 创建数据库</h3><h4 id="MySQL-使用-‘CREATE’-SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。"><a href="#MySQL-使用-‘CREATE’-SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。" class="headerlink" title="MySQL 使用 ‘CREATE’ SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。"></a>MySQL 使用 ‘CREATE’ SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE 数据库名;</span><br></pre></td></tr></table></figure>
-
-<h4 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h4><ul>
-<li>创建名为“test666”的数据库<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE test666;</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
-<h3 id="MySQL-删除数据库"><a href="#MySQL-删除数据库" class="headerlink" title="MySQL 删除数据库"></a>MySQL 删除数据库</h3><h4 id="MySQL-使用-‘drop’-SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。"><a href="#MySQL-使用-‘drop’-SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。" class="headerlink" title="MySQL 使用 ‘drop’ SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。"></a>MySQL 使用 ‘drop’ SQL语句来删除数据库。在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> database <span class="operator">&lt;</span>数据库名<span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="简单实例-1"><a href="#简单实例-1" class="headerlink" title="简单实例"></a>简单实例</h4><ul>
-<li>删除名为“test666”的数据库<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> database test666;</span><br></pre></td></tr></table></figure>
-<h4 id="注意：删库跑路很危险，请谨慎快跑！"><a href="#注意：删库跑路很危险，请谨慎快跑！" class="headerlink" title="注意：删库跑路很危险，请谨慎快跑！"></a>注意：删库跑路很危险，请谨慎快跑！</h4></li>
-</ul>
-<h3 id="MySQL-创建数据表"><a href="#MySQL-创建数据表" class="headerlink" title="MySQL 创建数据表"></a>MySQL 创建数据表</h3><h4 id="MySQL-使用-“CREATE-TABLE”-SQL语句来创建。你也可以通过-Navicat-点击你想要创建数据表的数据库，然后右键“表”，选择“新建表”去创建数据表。"><a href="#MySQL-使用-“CREATE-TABLE”-SQL语句来创建。你也可以通过-Navicat-点击你想要创建数据表的数据库，然后右键“表”，选择“新建表”去创建数据表。" class="headerlink" title="MySQL 使用 “CREATE TABLE” SQL语句来创建。你也可以通过 Navicat 点击你想要创建数据表的数据库，然后右键“表”，选择“新建表”去创建数据表。"></a>MySQL 使用 “CREATE TABLE” SQL语句来创建。你也可以通过 Navicat 点击你想要创建数据表的数据库，然后右键“表”，选择“新建表”去创建数据表。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (column_name column_type);</span><br></pre></td></tr></table></figure>
-<h4 id="简单实例-2"><a href="#简单实例-2" class="headerlink" title="简单实例"></a>简单实例</h4><ul>
-<li>创建表名为“test6”的数据表，</li>
-<li>其中列名为id，类型为无符号int，自动递增；</li>
-<li>列名为title，类型为字符类型（varchar），不为空；</li>
-<li>列名为author，类型也为字符类型（varchar），不为空；</li>
-<li>列名为date，类型为日期类型；</li>
-<li>设置id为主键，要实现自动递增，必须得是主键</li>
-<li>将此表设置为utf-8的字符编码格式<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> `test6`(</span><br><span class="line">   `id` <span class="type">INT</span> UNSIGNED AUTO_INCREMENT,</span><br><span class="line">   `title` <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">   `author` <span class="type">VARCHAR</span>(<span class="number">40</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">   `<span class="type">date</span>` <span class="type">DATE</span>,</span><br><span class="line">   <span class="keyword">PRIMARY</span> KEY ( `id` )</span><br><span class="line">)<span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure></li>
-<li>如果你不想字段为 NULL 可以设置字段的属性为 NOT NULL， 在操作数据库时如果输入该字段的数据为NULL ，就会报错。</li>
-<li>AUTO_INCREMENT定义列为自增的属性，一般用于主键，数值会自动加1。</li>
-<li>PRIMARY KEY关键字用于定义列为主键。 您可以使用多列来定义主键，列间以逗号分隔。</li>
-</ul>
-<h3 id="MySQL-插入数据"><a href="#MySQL-插入数据" class="headerlink" title="MySQL 插入数据"></a>MySQL 插入数据</h3><h4 id="MySQL-表中使用-INSERT-INTO-SQL语句来插入数据。你可以通过-Navicat-“新建查询”中使用如下语句向数据表中插入数据。"><a href="#MySQL-表中使用-INSERT-INTO-SQL语句来插入数据。你可以通过-Navicat-“新建查询”中使用如下语句向数据表中插入数据。" class="headerlink" title="MySQL 表中使用 INSERT INTO SQL语句来插入数据。你可以通过 Navicat “新建查询”中使用如下语句向数据表中插入数据。"></a>MySQL 表中使用 INSERT INTO SQL语句来插入数据。你可以通过 Navicat “新建查询”中使用如下语句向数据表中插入数据。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name ( field1, field2,...fieldN )</span><br><span class="line"><span class="keyword">VALUES</span>( value1, value2,...valueN );</span><br></pre></td></tr></table></figure>
-<h4 id="简单实例-3"><a href="#简单实例-3" class="headerlink" title="简单实例"></a>简单实例</h4><ul>
-<li>往“test6”数据表中添加数据<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test6 ( id, title,author,<span class="type">date</span> )</span><br><span class="line"><span class="keyword">VALUES</span>( <span class="number">666</span>, &quot;插入数据&quot;,&quot;light&quot;, <span class="string">&#x27;2022-12-1&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="如果数据是字符型，必须使用单引号或者双引号，如：”value”。"><a href="#如果数据是字符型，必须使用单引号或者双引号，如：”value”。" class="headerlink" title="如果数据是字符型，必须使用单引号或者双引号，如：”value”。"></a>如果数据是字符型，必须使用单引号或者双引号，如：”value”。</h4></li>
-</ul>
-<h3 id="MySQL-删除数据表"><a href="#MySQL-删除数据表" class="headerlink" title="MySQL 删除数据表"></a>MySQL 删除数据表</h3><h4 id="MySQL-表中使用-DROP-TABLE-SQL语句来插入数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中删除数据表。"><a href="#MySQL-表中使用-DROP-TABLE-SQL语句来插入数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中删除数据表。" class="headerlink" title="MySQL 表中使用 DROP TABLE SQL语句来插入数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中删除数据表。"></a>MySQL 表中使用 DROP TABLE SQL语句来插入数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中删除数据表。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
-<h4 id="简单实例-4"><a href="#简单实例-4" class="headerlink" title="简单实例"></a>简单实例</h4><ul>
-<li>删除“test6”的数据表<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> test6 ;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="MySQL-更新数据"><a href="#MySQL-更新数据" class="headerlink" title="MySQL 更新数据"></a>MySQL 更新数据</h3><ul>
-<li>你可以同时更新一个或多个字段。</li>
-<li>你可以在 WHERE 子句中指定任何条件。</li>
-<li>你可以在一个单独表中同时更新数据。<h4 id="MySQL-数据库使用SQL-UPDATE语句来查询数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中更新数据。"><a href="#MySQL-数据库使用SQL-UPDATE语句来查询数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中更新数据。" class="headerlink" title="MySQL 数据库使用SQL UPDATE语句来查询数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中更新数据。"></a>MySQL 数据库使用SQL UPDATE语句来查询数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中更新数据。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value1, field2<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value2</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br></pre></td></tr></table></figure>
-<h4 id="简单实例-5"><a href="#简单实例-5" class="headerlink" title="简单实例"></a>简单实例</h4></li>
-<li>更新“test6”数据表中，id值为666的信息；将其进行修改<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> test6 <span class="keyword">SET</span> id<span class="operator">=</span><span class="number">99</span>, title<span class="operator">=</span>&quot;更新数据&quot;,author<span class="operator">=</span>&quot;update&quot;,<span class="type">date</span><span class="operator">=</span><span class="string">&#x27;2099-12-1&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">666</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="MySQL-查询数据"><a href="#MySQL-查询数据" class="headerlink" title="MySQL 查询数据"></a>MySQL 查询数据</h3><ul>
-<li>查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。</li>
-<li>SELECT 命令可以读取一条或者多条记录。</li>
-<li>你可以使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据</li>
-<li>你可以使用 WHERE 语句来包含任何条件。</li>
-<li>你可以使用 LIMIT 属性来设定返回的记录数。</li>
-<li>你可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。<h4 id="MySQL-数据库使用SQL-SELECT语句来查询数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中查询数据。"><a href="#MySQL-数据库使用SQL-SELECT语句来查询数据。你可以通过-Navicat-“新建查询”中使用如下语法格式向数据表中查询数据。" class="headerlink" title="MySQL 数据库使用SQL SELECT语句来查询数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中查询数据。"></a>MySQL 数据库使用SQL SELECT语句来查询数据。你可以通过 Navicat “新建查询”中使用如下语法格式向数据表中查询数据。</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line">[LIMIT N][ <span class="keyword">OFFSET</span> M]</span><br></pre></td></tr></table></figure>
-<h4 id="简单实例-6"><a href="#简单实例-6" class="headerlink" title="简单实例"></a>简单实例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">*</span> 查询“test6”数据表中，id值为<span class="number">99</span>的数据，并显示id，<span class="type">date</span>字段，</span><br><span class="line"><span class="keyword">SELECT</span> id,<span class="type">date</span></span><br><span class="line"><span class="keyword">FROM</span> test6</span><br><span class="line"><span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">99</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>mysql</category>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cmd 指令</title>
-    <url>/2022/11/27/test/</url>
-    <content><![CDATA[<h3 id="1、关机、重启、注销的cmd命令"><a href="#1、关机、重启、注销的cmd命令" class="headerlink" title="1、关机、重启、注销的cmd命令"></a>1、关机、重启、注销的cmd命令</h3><ul>
-<li>xx是关机延时时间 /秒；</li>
-<li>xx可以是00，即时关机。</li>
-<li>有时候windows提示n分钟后关机，但实际是你设定的时间<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">shutdown -s -t xx      <span class="comment">// 延时/即时 关机，xx为几秒</span></span><br><span class="line">at <span class="number">10</span>:<span class="number">00</span> shutdown -s   <span class="comment">// 定时关机</span></span><br><span class="line">shutdown -r -t xx      <span class="comment">// 延时/即时 重启，xx为几秒</span></span><br><span class="line">shutdown -l -t xx      <span class="comment">// 延时/即时 注销，xx为几秒</span></span><br><span class="line">shutdown -a            <span class="comment">// 取消关机，重启，注销等指令</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>说明：命令的s是指关机的意思，把s换为r，关机变为重启。同理，把s换为l，关机变为注销。<br>注意：命令行要各部分要有空格，否则不能运行。</p>
-]]></content>
-      <categories>
-        <category>cmd</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL数据库命令大全</title>
-    <url>/2023/02/06/mysql-commands/</url>
-    <content><![CDATA[<h3 id="常用数据库-库指令"><a href="#常用数据库-库指令" class="headerlink" title="常用数据库 - 库指令"></a>常用数据库 - 库指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> VERSION(); <span class="comment">-- 查看数据库版本</span></span><br><span class="line"><span class="keyword">SHOW</span> DATABASES; <span class="comment">-- 查看mysql中的数据库名称</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE dbName; <span class="comment">-- 创建数据库</span></span><br><span class="line">USE dbName; <span class="comment">-- 使用数据库</span></span><br><span class="line"><span class="keyword">SELECT</span> DATABASE(); <span class="comment">-- 当前正在使用的数据库</span></span><br><span class="line"><span class="keyword">DROP</span> DATABASE dbName; <span class="comment">-- 删除指定数据库</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h3 id="常用数据库-表指令"><a href="#常用数据库-表指令" class="headerlink" title="常用数据库 - 表指令"></a>常用数据库 - 表指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tableName ( elementName type constrain); <span class="comment">-- 创建表 </span></span><br><span class="line"><span class="keyword">SHOW</span> TABLES; <span class="comment">-- 查看数据库中有多少张表</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> tableName; <span class="comment">-- 查看表结构</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tableName <span class="keyword">ADD</span> newElement elementType [constrain] <span class="comment">-- 给指定表添加指定的元素</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tableName <span class="keyword">DROP</span> elementName <span class="comment">-- 删除指定表中的指定元素</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tableName CHANGE oldName newName type [constrain] <span class="comment">-- 修改表字段名及类型约束</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> oldTableName RENAME newTableName <span class="comment">-- 修改当前表名 </span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> tableName <span class="comment">-- 删除指定的表</span></span><br></pre></td></tr></table></figure>
-<h3 id="常用数据库-增、删、改、查指令"><a href="#常用数据库-增、删、改、查指令" class="headerlink" title="常用数据库 - 增、删、改、查指令"></a>常用数据库 - 增、删、改、查指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- INSERT </span></span><br><span class="line"><span class="comment">-- 	主要用于插入数据 </span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (element) <span class="keyword">VALUE</span> (<span class="keyword">value</span>) <span class="comment">-- 单条数据插入 </span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName <span class="keyword">VALUE</span>(<span class="keyword">value</span>) <span class="comment">-- 给指定的表所有的字段插入数据,不推荐如此使用</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (element) <span class="keyword">VALUES</span> (<span class="keyword">value</span>),(<span class="keyword">value</span>) <span class="comment">-- 多条数据的同时插入 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- DELETE </span></span><br><span class="line"><span class="comment">-- 	用于对数据表中数据的删除 </span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tableName <span class="comment">-- 会删除表中所有的数据 </span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> ...... <span class="comment">-- 在使用DELETE语句的时候一般情况下需要配合着条件语句使用 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- UPDATE </span></span><br><span class="line"><span class="comment">--   用于对数据表中的内容进行修改 </span></span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> element <span class="operator">=</span> <span class="keyword">value</span> <span class="comment">-- 会修改该字段的所有数据</span></span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> element <span class="operator">=</span> <span class="keyword">value</span> WHERE... <span class="comment">-- 在使用Update语句的时候一般情况下需要配合着条件语句使用 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">--  SELECT </span></span><br><span class="line"><span class="comment">-- 	使用频率最高 </span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="comment">-- 查询指定表中所有的信息 </span></span><br><span class="line"><span class="keyword">SELECT</span> elementName <span class="keyword">FROM</span> tableName <span class="comment">-- 查询需要显示的内容</span></span><br><span class="line"><span class="keyword">SELECT</span> elementName <span class="keyword">as</span> newName <span class="keyword">FROM</span> tableName <span class="comment">-- 给指定的字段起别名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- insert + select </span></span><br><span class="line"><span class="comment">-- 	把查询到的信息插入到另外一个指定的表中 </span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> two (twoName,twoEmail) <span class="keyword">select</span> oneName,oneAdd <span class="keyword">from</span> <span class="keyword">one</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="常用数据库-关系、条件指令"><a href="#常用数据库-关系、条件指令" class="headerlink" title="常用数据库 - 关系、条件指令"></a>常用数据库 - 关系、条件指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- or || 或则 满足其中一个条件即可</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">one</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">one</span> <span class="keyword">where</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaojun&#x27;</span> <span class="keyword">or</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaohong&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">one</span> <span class="keyword">where</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaojun&#x27;</span> <span class="operator">||</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaohong&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- AND &amp;&amp; 并且的意思 ，所有的条件都必须满足</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">one</span> <span class="keyword">where</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaojun&#x27;</span> <span class="keyword">and</span> oneName <span class="operator">=</span> <span class="string">&#x27;xiaohong&#x27;</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">-- BETWEEN....AND ... 在什么什么范围内 </span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> human <span class="keyword">where</span> humanId <span class="keyword">between</span> <span class="number">2</span> <span class="keyword">and</span> <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- LIMIT 条件限制(限制查询的数量)</span></span><br><span class="line"><span class="keyword">select</span>  <span class="operator">*</span> <span class="keyword">from</span> human limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 	LIMIT ?,? 第一问号代表从哪里开始 ， 第二个问号代表获取数据的数量</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> human limit <span class="number">0</span>,<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- ORDER BY 排序 </span></span><br><span class="line"><span class="comment">-- 	DESC 降序 关键字</span></span><br><span class="line"><span class="comment">-- 	ASC  升序 关键字</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> human <span class="keyword">order</span> <span class="keyword">by</span> humanId <span class="keyword">asc</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> human <span class="keyword">order</span> <span class="keyword">by</span> humanId <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- limit放置在order by之后 </span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> human <span class="keyword">order</span> <span class="keyword">by</span> humanAge <span class="keyword">desc</span> limit <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 相同内容数据作为一组</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">group</span> <span class="keyword">by</span> studentName;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- like模糊查询</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> customer <span class="keyword">where</span> customerName <span class="keyword">like</span> <span class="string">&#x27;%h%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- is not null / is null 查询字段是否为空的数据</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> studentEmail <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> studentEmail <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- DISTINCT 不重复，排除重复的内容 </span></span><br><span class="line"><span class="comment">-- 	只能对一个字段进行约束 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> studentName <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 自定义变量</span></span><br><span class="line"><span class="comment">-- 	set @参数名 = value</span></span><br><span class="line"><span class="keyword">set</span> <span class="variable">@sn</span> <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span>  <span class="variable">@sn</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> studentName <span class="operator">=</span> <span class="variable">@sn</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student <span class="keyword">where</span> studentName <span class="operator">=</span> <span class="variable">@sn</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- @参数名 :=  查询到的参数值</span></span><br><span class="line"><span class="keyword">select</span> <span class="variable">@cn</span> :<span class="operator">=</span> customerName <span class="keyword">from</span> customer <span class="keyword">where</span> customerId <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> customer <span class="keyword">where</span> customerName <span class="operator">=</span> <span class="variable">@cn</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据库-函数指令"><a href="#数据库-函数指令" class="headerlink" title="数据库 - 函数指令"></a>数据库 - 函数指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 时间 </span></span><br><span class="line"><span class="comment">-- 	now 当前日期+时间，current_Time 当前时间，current_date当前日期</span></span><br><span class="line"><span class="keyword">select</span> now();</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">current_Time</span>();</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">current_date</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 数学函数 </span></span><br><span class="line"><span class="comment">-- 	min() 求最小值 </span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">min</span>(customerId) <span class="keyword">from</span> customer;</span><br><span class="line"><span class="comment">-- 	max() 求最大值 </span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(customerId) <span class="keyword">from</span> customer;</span><br><span class="line"><span class="comment">-- 	count 求数量 </span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> customer;</span><br><span class="line"><span class="comment">-- 	avg 平均数 </span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(customerId) <span class="keyword">from</span> customer;</span><br><span class="line"><span class="comment">-- 	sum 求和 </span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(customerId) <span class="keyword">from</span> customer;</span><br></pre></td></tr></table></figure>
-<h3 id="数据库-判断、循环指令"><a href="#数据库-判断、循环指令" class="headerlink" title="数据库 - 判断、循环指令"></a>数据库 - 判断、循环指令</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- IF </span></span><br><span class="line"><span class="comment">-- 	IF(expr,expr2,expr3) </span></span><br><span class="line"><span class="comment">-- 		当expre为true </span></span><br><span class="line"><span class="comment">-- 			执行expre2 </span></span><br><span class="line"><span class="comment">-- 		当expre为false </span></span><br><span class="line"><span class="comment">-- 			执行expre3 </span></span><br><span class="line"><span class="comment">-- 	表达式只能判断和处理唯一的值 </span></span><br><span class="line"><span class="comment">-- 	表达式只支持select语句 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> if(<span class="number">1</span> <span class="operator">&lt;</span> <span class="number">2</span> ,<span class="string">&#x27;xiaoming&#x27;</span>,<span class="string">&#x27;xiaohong&#x27;</span>) <span class="keyword">as</span> <span class="string">&#x27;结果&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> if(<span class="number">1</span> <span class="operator">&lt;</span> <span class="number">2</span> ,(<span class="keyword">select</span> customerName <span class="keyword">from</span> customer <span class="keyword">where</span> customerId <span class="operator">=</span> <span class="number">1</span>),<span class="string">&#x27;xiaohong&#x27;</span>) <span class="keyword">as</span> <span class="string">&#x27;结果&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据库-第一、第二范式"><a href="#数据库-第一、第二范式" class="headerlink" title="数据库 - 第一、第二范式"></a>数据库 - 第一、第二范式</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 第一范式是原子性，字段名不能重复</span></span><br><span class="line"><span class="comment">-- 第二范式：唯一性 。每一条数据都必须有一个元素能够区分该条的唯一存在</span></span><br><span class="line"><span class="comment">-- 		 建立主键 ，主键的特性是，不能重复， </span></span><br><span class="line"><span class="comment">--     主键的关键字 primary key ,自动递增的关键字 auto_increment</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> cars;  <span class="comment">-- 删除 数据表cars </span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> cars; <span class="comment">-- 清空 数据表cars 的所有数据</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> cars; <span class="comment">-- 清空 数据表，介于drop 和delete 之间</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> cars</span><br><span class="line">(</span><br><span class="line">	carId <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    carName <span class="type">varchar</span>(<span class="number">200</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据库-外键"><a href="#数据库-外键" class="headerlink" title="数据库 - 外键"></a>数据库 - 外键</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- foreign key</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> person</span><br><span class="line">(</span><br><span class="line">	personId <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    personName <span class="type">varchar</span>(<span class="number">200</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> email</span><br><span class="line">(</span><br><span class="line">	emailId <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    emailName <span class="type">varchar</span>(<span class="number">200</span>),</span><br><span class="line">    personId <span class="type">int</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">describe</span> person;</span><br><span class="line"><span class="keyword">describe</span> email;</span><br><span class="line"><span class="comment">-- 创建一个约束constraint起名为emailFk，使emaiil表中personId和person表中的personId相关联references</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> email <span class="keyword">add</span> <span class="keyword">constraint</span> emailFk <span class="keyword">foreign</span> key (personId) </span><br><span class="line"><span class="keyword">references</span> person(personId);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> person;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> email;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> person (personId,personName) <span class="keyword">value</span> (<span class="number">10</span> , <span class="string">&#x27;xiaoming&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> person (personId,personName) <span class="keyword">value</span> (<span class="number">5</span> , <span class="string">&#x27;xiaohong&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> email (emailName , personId) <span class="keyword">values</span> (<span class="string">&#x27;xiaoming@email.com&#x27;</span>, <span class="number">10</span> );</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> email (emailName , personId) <span class="keyword">values</span> (<span class="string">&#x27;xiaoming@hotmail.com&#x27;</span>, <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> email (emailName,personId) <span class="keyword">values</span></span><br><span class="line">(<span class="string">&#x27;xh@163.com&#x27;</span>,<span class="number">5</span>),</span><br><span class="line">(<span class="string">&#x27;xh@qq.com&#x27;</span>,<span class="number">5</span>),</span><br><span class="line">(<span class="string">&#x27;xh@hotmail&#x27;</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> email <span class="keyword">where</span> personId <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="keyword">delete</span>  <span class="keyword">from</span> person <span class="keyword">where</span> personId <span class="operator">=</span> <span class="number">5</span>; <span class="comment">-- 在email 表中personId = 5的数据未清空前，不能删除</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数据库-级联"><a href="#数据库-级联" class="headerlink" title="数据库 - 级联"></a>数据库 - 级联</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- cascade</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> person</span><br><span class="line">(</span><br><span class="line">	personId <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    personName <span class="type">varchar</span>(<span class="number">200</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> email</span><br><span class="line">(</span><br><span class="line">	emailId <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">    emailName <span class="type">varchar</span>(<span class="number">200</span>),</span><br><span class="line">    personId <span class="type">int</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">-- 创建一个约束constraint起名为emailFk，使emaiil表中personId和person表中的personId相关联references</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> email <span class="keyword">add</span> <span class="keyword">constraint</span> emailFk <span class="keyword">foreign</span> key (personId) </span><br><span class="line"><span class="keyword">references</span> person(personId) <span class="keyword">on</span> <span class="keyword">update</span> cascade <span class="keyword">on</span> <span class="keyword">delete</span> cascade ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> person;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> email;</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> person <span class="keyword">set</span> personId  <span class="operator">=</span> <span class="number">9527</span> <span class="keyword">where</span> personId <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> person <span class="keyword">where</span> personId <span class="operator">=</span> <span class="number">9527</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>mysql</category>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Truncate用法详解</title>
-    <url>/2023/02/07/mysql-truncate/</url>
-    <content><![CDATA[<h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>当我们想要清空某张表时，往往会使用truncate语句。大多时候我们只关心能否满足需求，而不去想这类语句的使用场景及注意事项。本篇文章主要介绍truncate语句的使用方法及注意事项。</p>
-<h4 id="1-truncate使用语法"><a href="#1-truncate使用语法" class="headerlink" title="1.truncate使用语法"></a>1.truncate使用语法</h4><p>truncate的作用是清空表或者说是截断表，只能作用于表。truncate的语法很简单，后面直接跟表名即可，例如： truncate table tbl_name 或者 truncate tbl_name 。</p>
-<p>执行truncate语句需要拥有表的drop权限，从逻辑上讲，truncate table类似于delete删除所有行的语句或drop table然后再create table语句的组合。为了实现高性能，它绕过了删除数据的DML方法，因此，它不能回滚。尽管truncate table与delete相似，但它被分类为DDL语句而不是DML语句。</p>
-<h4 id="2-truncate与drop-delete的对比"><a href="#2-truncate与drop-delete的对比" class="headerlink" title="2.truncate与drop,delete的对比"></a>2.truncate与drop,delete的对比</h4><p>上面说过truncate与delete，drop很相似，其实这三者还是与很大的不同的，下面简单对比下三者的异同。</p>
-<span id="more"></span>
+<h4 id="7、标识符"><a href="#7、标识符" class="headerlink" title="7、标识符"></a>7、标识符</h4><ul>
+<li><p>什么是标识符</p>
+<p>在Python 程序中，我们可以给很多东西起名字，比如：</p>
 <ul>
-<li>truncate与drop是DDL语句，执行后无法回滚；delete是DML语句，可回滚。</li>
-<li>truncate只能作用于表；delete，drop可作用于表、视图等。</li>
-<li>truncate会清空表中的所有行，但表结构及其约束、索引等保持不变；drop会删除表的结构及其所依赖的约束、索引等。</li>
-<li>truncate会重置表的自增值；delete不会。</li>
-<li>truncate不会激活与表有关的删除触发器；delete可以。</li>
-<li>truncate后会使表和索引所占用的空间会恢复到初始大小；delete操作不会减少表或索引所占用的空间，drop语句将表所占用的空间全释放掉。</li>
+<li>变量的名字</li>
+<li>方法的名字</li>
+<li>类的名字，等等</li>
 </ul>
-<h4 id="3-truncate使用场景及注意事项"><a href="#3-truncate使用场景及注意事项" class="headerlink" title="3.truncate使用场景及注意事项"></a>3.truncate使用场景及注意事项</h4><p>通过前面介绍，我们很容易得出truncate语句的使用场景，即该表数据完全不需要时可以用truncate。如果想删除部分数据用delete，注意带上where子句；如果想删除表，当然用drop；如果想保留表而将所有数据删除且和事务无关，用truncate即可；如果和事务有关，或者想触发trigger，还是用delete；如果是整理表内部的碎片，可以用truncate然后再重新插入数据。</p>
-<p>无论怎样，truncate表都是高危操作，特别是在生产环境要更加小心，下面列出几点注意事项，希望大家使用时可以做下参考。</p>
+<p>这些名字，我们把它统一的称之为标识符，用来做内容的标识。</p>
+<p>所以，标识符：</p>
+<p>是用户在编程的时候所使用的一系列名字，用于给变量、类、方法等命名；</p>
+</li>
+</ul>
+<h5 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则"></a>标识符命名规则</h5><p><strong>1、内容限定</strong></p>
+<p>标识符命名中，只允许出现：</p>
 <ul>
-<li>truncate无法通过binlog回滚。</li>
-<li>truncate会清空所有数据且执行速度很快。</li>
-<li>truncate不能对有外键约束引用的表使用。</li>
-<li>执行truncate需要drop权限，不建议给账号drop权限。</li>
-<li>执行truncate前一定要再三检查确认，最好提前备份下表数据。<br>————————————————<br>版权声明：本文为CSDN博主「kun_行者」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/wangkun_j/article/details/105291960">https://blog.csdn.net/wangkun_j/article/details/105291960</a></li>
+<li><p>英文</p>
+</li>
+<li><p>中文</p>
+</li>
+<li><p>数字</p>
+</li>
+<li><p>下划线（_）</p>
+</li>
 </ul>
+<p>这四类元素。</p>
+<p>其余任何内容都不被允许；</p>
+<p>注意：</p>
+<p>（1）不推荐使用中文；</p>
+<p>（2）数字是不可以开头</p>
+<p><strong>2、大小写敏感</strong></p>
+<p>以定义变量为例：</p>
+<p>Andy=”安迪1”</p>
+<p>andy=”安迪2”</p>
+<p>字母a的大写和小写，是完全能够区分的。</p>
+<p><strong>3、不可使用关键字</strong></p>
+<p>Python中一系列单词，称之为关键字，关键字在Python中都有特定用途，我们不可以使用我们作为标识符</p>
+<p><img src="Python.assets/image-20230811231200835.png" alt="image-20230811231200835"></p>
+<p>注意：关键字也区分大小写；</p>
+<h5 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h5><ul>
+<li>变量名</li>
+<li>类名</li>
+<li>方法名</li>
+</ul>
+<p>不同的标识符，有不同的规范；</p>
+<p><strong>1、变量的命名规范</strong></p>
+<ul>
+<li>见名知意<ul>
+<li>明了：尽量做到，看到名字，就知道是什么意思；</li>
+<li>简洁：尽量在确保“明了”的前提下，减少名字的长度；</li>
+</ul>
+</li>
+<li>下划线命名法<ul>
+<li>多个单词组合变量名，要试用下划线做分隔；</li>
+</ul>
+</li>
+<li>英文字母全小写<ul>
+<li>命名变量中的英文字母，应全部小写；</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h5 id="1、掌握字面量的含义？"><a href="#1、掌握字面量的含义？" class="headerlink" title="1、掌握字面量的含义？"></a>1、掌握字面量的含义？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 代码中,被写在代码中的固定值，称之为字面量；</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、注释的作用？"><a href="#2、注释的作用？" class="headerlink" title="2、注释的作用？"></a>2、注释的作用？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 注释是代码中的解释型语句，用来对代码内容进行注解，注释不会被程序执行；</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、使用什么语句可以查看数据类型？"><a href="#3、使用什么语句可以查看数据类型？" class="headerlink" title="3、使用什么语句可以查看数据类型？"></a>3、使用什么语句可以查看数据类型？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> type()</span><br></pre></td></tr></table></figure>
+
+<h5 id="4、如下代码，name-type变量可以存储变量name的类型信息，是因为？"><a href="#4、如下代码，name-type变量可以存储变量name的类型信息，是因为？" class="headerlink" title="4、如下代码，name_type变量可以存储变量name的类型信息，是因为？"></a>4、如下代码，name_type变量可以存储变量name的类型信息，是因为？</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;字符串&quot;</span></span><br><span class="line">name_type = <span class="built_in">type</span>(name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 因为type()语句会给出结果（返回值）</span><br></pre></td></tr></table></figure>
+
+<h5 id="5、变量有类型嘛？"><a href="#5、变量有类型嘛？" class="headerlink" title="5、变量有类型嘛？"></a>5、变量有类型嘛？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 在python中，变量是没有数据类型的，但是它存储的数据是有类型的；</span><br></pre></td></tr></table></figure>
+
+<h5 id="6、任意类型都可以转换成字符串？字符串可以随意转换成数字？"><a href="#6、任意类型都可以转换成字符串？字符串可以随意转换成数字？" class="headerlink" title="6、任意类型都可以转换成字符串？字符串可以随意转换成数字？"></a>6、任意类型都可以转换成字符串？字符串可以随意转换成数字？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 任意类型都可以转换成字符串,但字符串转换成数字时，字符串内必须只有数字才可以；</span><br></pre></td></tr></table></figure>
+
+<h5 id="7、浮点数转整数会丢失什么？"><a href="#7、浮点数转整数会丢失什么？" class="headerlink" title="7、浮点数转整数会丢失什么？"></a>7、浮点数转整数会丢失什么？</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 丢失精度，也就是小数部分</span><br></pre></td></tr></table></figure>
+
+<h4 id="8、标识符"><a href="#8、标识符" class="headerlink" title="8、标识符"></a>8、标识符</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 什么是标识符？</span><br><span class="line"><span class="bullet">	-</span> 用户编写代码时,对变量、类、方法等编写的名字，叫做标识符；</span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">* 标识符的命名规则</span></span><br><span class="line"><span class="code">	- 内容限定（中文、英文、数字、下划线）</span></span><br><span class="line"><span class="code">	- 大小写敏感</span></span><br><span class="line"><span class="code">	- 不可使用关键字</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">* 变量的命名规范？</span></span><br><span class="line"><span class="code">	- 见名知意</span></span><br><span class="line"><span class="code">	- 下划线命名法</span></span><br><span class="line"><span class="code">	- 英文字母全小写</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
-      <categories>
-        <category>mysql</category>
-        <category>数据库</category>
-        <category>转载</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
-        <tag>转载</tag>
-      </tags>
   </entry>
   <entry>
-    <title>IDEA快捷键</title>
-    <url>/2023/02/11/shortcutKey_idea/</url>
-    <content><![CDATA[<h4 id="必备快捷键"><a href="#必备快捷键" class="headerlink" title="必备快捷键"></a>必备快捷键</h4><ul>
-<li>Ctrl + D <strong>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</strong> </li>
-<li>Ctrl + W <strong>递进式选择代码块。</strong>可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围 （必备）</li>
-<li>Ctrl + Shift + W <strong>递进式取消选择代码块。</strong>可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围 （必备）</li>
-<li>Alt + F3 <strong>选中文本，逐个往下查找相同文本，并高亮显示</strong></li>
-<li>Ctrl + Alt + O <strong>优化导入的类，可以对当前文件和整个包目录使用 （必备）</strong></li>
-<li>Ctrl + Shift + R <strong>根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件 （必备）</strong></li>
-<li>Ctrl + Shift + U <strong>对选中的代码进行大 / 小写轮流转换 （必备）</strong></li>
-<li>Ctrl + Alt + I <strong>光标所在行 或 选中部分进行自动代码缩进，有点类似格式化</strong></li>
-<li>Ctrl + Shift + J <strong>自动将下一行合并到当前行末尾 （必备）</strong></li>
-<li>Ctrl + F 在当前文件进行文本查找 （必备）</li>
-<li>Ctrl + R 在当前文件进行文本替换 （必备）</li>
-<li>Ctrl + Z 撤销 （必备）</li>
-<li>Ctrl + Y 删除光标所在行 或 删除选中的行 （必备）<span id="more"></span></li>
-<li>Ctrl + + 展开代码</li>
-<li>Ctrl + - 折叠代码</li>
-<li>Ctrl + Space 基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号 （必备）</li>
-<li>Alt + Enter IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同 （必备）</li>
-<li>Shift + Tab 取消缩进</li>
-<li>Shift + Enter 开始新一行。光标所在行下空出一行，光标定位到新行位置</li>
-<li>Ctrl + Alt + L 格式化代码，可以对当前文件和整个包目录使用 （必备）</li>
-<li>Ctrl + Shift + F 根据输入内容查找整个项目 或 指定目录内文件 （必备）</li>
-<li>Ctrl + Shift + Z 取消撤销 （必备）</li>
-<li>Ctrl + Shift + N 通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠 （必备）</li>
-<li>Ctrl + Shift + / 代码块注释 （必备）</li>
-</ul>
-<h4 id="Ctrl"><a href="#Ctrl" class="headerlink" title="Ctrl"></a>Ctrl</h4><ul>
-<li>Ctrl + F 在当前文件进行文本查找 （必备）</li>
-<li>Ctrl + R 在当前文件进行文本替换 （必备）</li>
-<li>Ctrl + Z 撤销 （必备）</li>
-<li>Ctrl + Y 删除光标所在行 或 删除选中的行 （必备）</li>
-<li>Ctrl + X 剪切光标所在行 或 剪切选择内容</li>
-<li>Ctrl + C 复制光标所在行 或 复制选择内容</li>
-<li>Ctrl + D 复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 （必备）</li>
-<li>Ctrl + W 递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围 （必备）</li>
-<li>Ctrl + E 显示最近打开的文件记录列表</li>
-<li>Ctrl + N 根据输入的 类名 查找类文件</li>
-<li>Ctrl + G 在当前文件跳转到指定行处</li>
-<li>Ctrl + J 插入自定义动态代码模板</li>
-<li>Ctrl + P 方法参数提示显示</li>
-<li>Ctrl + Q 光标所在的变量 / 类名 / 方法名等上面（也可以在提示补充的时候按），显示文档内容</li>
-<li>Ctrl + U 前往当前光标所在的方法的父类的方法 / 接口定义</li>
-<li>Ctrl + B 进入光标所在的方法/变量的接口或是定义出，等效于 Ctrl + 左键单击</li>
-<li>Ctrl + K 版本控制提交项目，需要此项目有加入到版本控制才可用</li>
-<li>Ctrl + T 版本控制更新项目，需要此项目有加入到版本控制才可用</li>
-<li>Ctrl + H 显示当前类的层次结构</li>
-<li>Ctrl + O 选择可重写的方法</li>
-<li>Ctrl + I 选择可继承的方法</li>
-<li>Ctrl + + 展开代码</li>
-<li>Ctrl + - 折叠代码</li>
-<li>Ctrl + / 注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 （必备）</li>
-<li>Ctrl + [ 移动光标到当前所在代码的花括号开始位置</li>
-<li>Ctrl + ] 移动光标到当前所在代码的花括号结束位置</li>
-<li>Ctrl + F1 在光标所在的错误代码出显示错误信息</li>
-<li>Ctrl + F3 调转到所选中的词的下一个引用位置</li>
-<li>Ctrl + F4 关闭当前编辑文件</li>
-<li>Ctrl + F8 在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</li>
-<li>Ctrl + F9 执行 Make Project 操作</li>
-<li>Ctrl + F11 选中文件 / 文件夹，使用助记符设定 / 取消书签</li>
-<li>Ctrl + F12 弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</li>
-<li>Ctrl + Tab 编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</li>
-<li>Ctrl + Enter 智能分隔行</li>
-<li>Ctrl + End 跳到文件尾</li>
-<li>Ctrl + Home 跳到文件头</li>
-<li>Ctrl + Space 基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号 （必备）</li>
-<li>Ctrl + Delete 删除光标后面的单词或是中文句</li>
-<li>Ctrl + BackSpace 删除光标前面的单词或是中文句</li>
-<li>Ctrl + 1,2,3…9 定位到对应数值的书签位置</li>
-<li>Ctrl + 左键单击 在打开的文件标题上，弹出该文件路径</li>
-<li>Ctrl + 光标定位 按 Ctrl 不要松开，会显示光标所在的类信息摘要</li>
-<li>Ctrl + 左方向键 光标跳转到当前单词 / 中文句的左侧开头位置</li>
-<li>Ctrl + 右方向键 光标跳转到当前单词 / 中文句的右侧开头位置</li>
-<li>Ctrl + 前方向键 等效于鼠标滚轮向前效果</li>
-<li>Ctrl + 后方向键 等效于鼠标滚轮向后效果</li>
-</ul>
-<h4 id="Alt"><a href="#Alt" class="headerlink" title="Alt"></a>Alt</h4><ul>
-<li>Alt + ` 显示版本控制常用操作菜单弹出层</li>
-<li>Alt + Q 弹出一个提示，显示当前类的声明 / 上下文信息</li>
-<li>Alt + F1 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择</li>
-<li>Alt + F2 对于前面页面，显示各类浏览器打开目标选择弹出层</li>
-<li>Alt + F3 选中文本，逐个往下查找相同文本，并高亮显示</li>
-<li>Alt + F7 查找光标所在的方法 / 变量 / 类被调用的地方</li>
-<li>Alt + F8 在 Debug 的状态下，选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果</li>
-<li>Alt + Home 定位 / 显示到当前文件的 Navigation Bar</li>
-<li>Alt + Enter IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同 （必备）</li>
-<li>Alt + Insert 代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</li>
-<li>Alt + 左方向键 按左方向切换当前已打开的文件视图</li>
-<li>Alt + 右方向键 按右方向切换当前已打开的文件视图</li>
-<li>Alt + 前方向键 当前光标跳转到当前文件的前一个方法名位置</li>
-<li>Alt + 后方向键 当前光标跳转到当前文件的后一个方法名位置</li>
-<li>Alt + 1,2,3…9 显示对应数值的选项卡，其中 1 是 Project 用得最多</li>
-</ul>
-<h4 id="Shift"><a href="#Shift" class="headerlink" title="Shift"></a>Shift</h4><ul>
-<li>Shift + F1 如果有外部文档可以连接外部文档</li>
-<li>Shift + F2 跳转到上一个高亮错误 或 警告位置</li>
-<li>Shift + F3 在查找模式下，查找匹配上一个</li>
-<li>Shift + F4 对当前打开的文件，使用新Windows窗口打开，旧窗口保留</li>
-<li>Shift + F6 对文件 / 文件夹 重命名</li>
-<li>Shift + F7 在 Debug 模式下，智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</li>
-<li>Shift + F8 在 Debug 模式下，跳出，表现出来的效果跟 F9 一样</li>
-<li>Shift + F9 等效于点击工具栏的 Debug 按钮</li>
-<li>Shift + F10 等效于点击工具栏的 Run 按钮</li>
-<li>Shift + F11 弹出书签显示层</li>
-<li>Shift + Tab 取消缩进</li>
-<li>Shift + ESC 隐藏当前 或 最后一个激活的工具窗口</li>
-<li>Shift + End 选中光标到当前行尾位置</li>
-<li>Shift + Home 选中光标到当前行头位置</li>
-<li>Shift + Enter 开始新一行。光标所在行下空出一行，光标定位到新行位置</li>
-<li>Shift + 左键单击 在打开的文件名上按此快捷键，可以关闭当前打开文件</li>
-<li>Shift + 滚轮前后滚动 当前文件的横向滚动轴滚动</li>
-</ul>
-<h4 id="Ctrl-Alt"><a href="#Ctrl-Alt" class="headerlink" title="Ctrl + Alt"></a>Ctrl + Alt</h4><ul>
-<li>Ctrl + Alt + L 格式化代码，可以对当前文件和整个包目录使用 （必备）</li>
-<li>Ctrl + Alt + O 优化导入的类，可以对当前文件和整个包目录使用 （必备）</li>
-<li>Ctrl + Alt + I 光标所在行 或 选中部分进行自动代码缩进，有点类似格式化</li>
-<li>Ctrl + Alt + T 对选中的代码弹出环绕选项弹出层</li>
-<li>Ctrl + Alt + J 弹出模板选择窗口，讲选定的代码加入动态模板中</li>
-<li>Ctrl + Alt + H 调用层次</li>
-<li>Ctrl + Alt + B 在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口</li>
-<li>Ctrl + Alt + V 快速引进变量</li>
-<li>Ctrl + Alt + Y 同步、刷新</li>
-<li>Ctrl + Alt + S 打开 IntelliJ IDEA 系统设置</li>
-<li>Ctrl + Alt + F7 显示使用的地方。寻找被该类或是变量被调用的地方，用弹出框的方式找出来</li>
-<li>Ctrl + Alt + F11 切换全屏模式</li>
-<li>Ctrl + Alt + Enter 光标所在行上空出一行，光标定位到新行</li>
-<li>Ctrl + Alt + Home 弹出跟当前文件有关联的文件弹出层</li>
-<li>Ctrl + Alt + Space 类名自动完成</li>
-<li>Ctrl + Alt + 左方向键 退回到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</li>
-<li>Ctrl + Alt + 右方向键 前进到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</li>
-<li>Ctrl + Alt + 前方向键 在查找模式下，跳到上个查找的文件</li>
-<li>Ctrl + Alt + 后方向键 在查找模式下，跳到下个查找的文件</li>
-<li>Ctrl + Shift + Enter 自动结束代码，行末自动添加分号 （必备）</li>
-<li>Ctrl + Shift + Space 智能代码提示</li>
-<li>Ctrl + Shift + Alt + V 无格式黏贴</li>
-<li>F2 跳转到下一个高亮错误 或 警告位置 （必备）</li>
-</ul>
-<h4 id="Ctrl-Shift"><a href="#Ctrl-Shift" class="headerlink" title="Ctrl + Shift"></a>Ctrl + Shift</h4><ul>
-<li>Ctrl + Shift + F 根据输入内容查找整个项目 或 指定目录内文件 （必备）</li>
-<li>Ctrl + Shift + R 根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件 （必备）</li>
-<li>Ctrl + Shift + J 自动将下一行合并到当前行末尾 （必备）</li>
-<li>Ctrl + Shift + Z 取消撤销 （必备）</li>
-<li>Ctrl + Shift + W 递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围 （必备）</li>
-<li>Ctrl + Shift + N 通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠 （必备）</li>
-<li>Ctrl + Shift + U 对选中的代码进行大 / 小写轮流转换 （必备）</li>
-<li>Ctrl + Shift + T 对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择</li>
-<li>Ctrl + Shift + C 复制当前文件磁盘路径到剪贴板</li>
-<li>Ctrl + Shift + V 弹出缓存的最近拷贝的内容管理器弹出层</li>
-<li>Ctrl + Shift + E 显示最近修改的文件列表的弹出层</li>
-<li>Ctrl + Shift + H 显示方法层次结构</li>
-<li>Ctrl + Shift + B 跳转到类型声明处</li>
-<li>Ctrl + Shift + I 快速查看光标所在的方法 或 类的定义</li>
-<li>Ctrl + Shift + A 查找动作 / 设置</li>
-<li>Ctrl + Shift + / 代码块注释 （必备）</li>
-<li>Ctrl + Shift + [ 选中从光标所在位置到它的顶部中括号位置</li>
-<li>Ctrl + Shift + ] 选中从光标所在位置到它的底部中括号位置</li>
-<li>Ctrl + Shift + + 展开所有代码</li>
-<li>Ctrl + Shift + - 折叠所有代码</li>
-<li>Ctrl + Shift + F7 高亮显示所有该选中文本，按Esc高亮消失</li>
-<li>Ctrl + Shift + F8 在 Debug 模式下，指定断点进入条件</li>
-<li>Ctrl + Shift + F9 编译选中的文件 / 包 / Module</li>
-<li>Ctrl + Shift + F12 编辑器最大化</li>
-<li>Ctrl + Shift + Space 智能代码提示</li>
-<li>Ctrl + Shift + Enter 自动结束代码，行末自动添加分号 （必备）</li>
-<li>Ctrl + Shift + Backspace 退回到上次修改的地方</li>
-<li>Ctrl + Shift + 1,2,3…9 快速添加指定数值的书签</li>
-<li>Ctrl + Shift + 左方向键 在代码文件上，光标跳转到当前单词 / 中文句的左侧开头位置，同时选中该单词 / 中文句</li>
-<li>Ctrl + Shift + 右方向键 在代码文件上，光标跳转到当前单词 / 中文句的右侧开头位置，同时选中该单词 / 中文句</li>
-<li>Ctrl + Shift + 左方向键 在光标焦点是在工具选项卡上，缩小选项卡区域</li>
-<li>Ctrl + Shift + 右方向键 在光标焦点是在工具选项卡上，扩大选项卡区域</li>
-<li>Ctrl + Shift + 前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序</li>
-<li>Ctrl + Shift + 后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序</li>
-</ul>
-<h4 id="Alt-Shift"><a href="#Alt-Shift" class="headerlink" title="Alt + Shift"></a>Alt + Shift</h4><ul>
-<li>Alt + Shift + N 选择 / 添加 task</li>
-<li>Alt + Shift + F 显示添加到收藏夹弹出层</li>
-<li>Alt + Shift + C 查看最近操作项目的变化情况列表</li>
-<li>Alt + Shift + F 添加到收藏夹</li>
-<li>Alt + Shift + I 查看项目当前文件</li>
-<li>Alt + Shift + F7 在 Debug 模式下，下一步，进入当前方法体内，如果方法体还有方法，则会进入该内嵌的方法中，依此循环进入</li>
-<li>Alt + Shift + F9 弹出 Debug 的可选择菜单</li>
-<li>Alt + Shift + F10 弹出 Run 的可选择菜单</li>
-<li>Alt + Shift + 左键双击 选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句</li>
-<li>Alt + Shift + 前方向键 移动光标所在行向上移动</li>
-<li>Alt + Shift + 后方向键 移动光标所在行向下移动</li>
-</ul>
-<h4 id="Ctrl-Shift-Alt"><a href="#Ctrl-Shift-Alt" class="headerlink" title="Ctrl + Shift + Alt"></a>Ctrl + Shift + Alt</h4><ul>
-<li>Ctrl + Shift + Alt + V 无格式黏贴</li>
-<li>Ctrl + Shift + Alt + N 前往指定的变量 / 方法</li>
-<li>Ctrl + Shift + Alt + S 打开当前项目设置</li>
-<li>Ctrl + Shift + Alt + C 复制参考信息</li>
-</ul>
-<h4 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h4><ul>
-<li>F2 跳转到下一个高亮错误 或 警告位置 （必备）</li>
-<li>F3 在查找模式下，定位到下一个匹配处</li>
-<li>F4 编辑源</li>
-<li>F7 在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</li>
-<li>F8 在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</li>
-<li>F9 在 Debug 模式下，恢复程序运行，但是如果该断点下面代码还有断点则停在下一个断点上</li>
-<li>F11 添加书签</li>
-<li>F12 回到前一个工具窗口</li>
-<li>Tab 缩进</li>
-<li>ESC 从工具窗口进入代码文件窗口</li>
-<li>连按两次Shift 弹出 Search Everywhere 弹出层<br>————————————————<br>版权声明：本文为CSDN博主「香辣奥利奥」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/qq_46550964/article/details/123971840">https://blog.csdn.net/qq_46550964/article/details/123971840</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>idea快捷键</category>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>idea快捷键</tag>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>滚动切换</title>
-    <url>/2023/02/11/web-RollingSwitch/</url>
-    <content><![CDATA[<h4 id="任务目标"><a href="#任务目标" class="headerlink" title="任务目标"></a>任务目标</h4><ul>
-<li>1、鼠标滚轮根据滚动方向滚动并切换div，实现由一全屏页切换至另一全屏页。</li>
-<li>2、点击侧边栏切换至相应的全屏页。<h5 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h5></li>
-<li>1、使用了z-index属性，通过改变该属性完成最上页的显示，</li>
-<li>2、修改top值，添加过渡效果，实现切换时有过渡样式，</li>
-<li>3、通过对对应div 的classList 进行add、remove 操作，改变其样式（active、upActive、downActive）</li>
-</ul>
-<h5 id="完整代码在最后，以下为分段代码"><a href="#完整代码在最后，以下为分段代码" class="headerlink" title="完整代码在最后，以下为分段代码"></a>完整代码在最后，以下为分段代码</h5><span id="more"></span>
-
-<h4 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    * &#123;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.box</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: fixed;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">        <span class="attribute">transition</span>: all <span class="number">0.8s</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-id">#box1</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-id">#box2</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: blue;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-id">#box3</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: green;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-id">#box4</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: yellow;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.bar</span> &#123;</span><br><span class="line">        <span class="comment">/*background: gray;*/</span></span><br><span class="line">        <span class="attribute">width</span>: <span class="number">48px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">20px</span>;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">45%</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">        <span class="attribute">display</span>: flex;</span><br><span class="line">        <span class="attribute">justify-content</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">48px</span>;</span><br><span class="line">        <span class="attribute">list-style</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: white;</span><br><span class="line">        <span class="attribute">text-align</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">        <span class="attribute">border-top</span>: solid <span class="number">1px</span> <span class="number">#ccc</span>;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">border</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">110</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">color</span>: white;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">0px</span> <span class="number">0px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">5px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.active</span> &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.downActive</span> &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.upActive</span> &#123;</span><br><span class="line">        <span class="attribute">top</span>: -<span class="number">100%</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> arr = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> aside = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.aside&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> aside_li = aside.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> throldHold = <span class="number">800</span>; <span class="comment">//两次滚动滚轮事件最小时间间隔</span></span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">true</span>; <span class="comment">//是否可以调用滚轮事件的方法 true:可以</span></span><br><span class="line">        <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">var</span> num;</span><br><span class="line">        <span class="comment">//wheel：当用户滚动滚轮触发。</span></span><br><span class="line">        <span class="variable language_">window</span>.<span class="property">onwheel</span> = wheel;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取当前的div在数组的下标</span></span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">fnNow</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123; <span class="comment">//得到当前checked元素的下标</span></span><br><span class="line">                <span class="keyword">if</span>(arr[i].<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;active&#x27;</span>)) &#123;</span><br><span class="line">                    num = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 点击侧边栏，切换</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aside_li.<span class="property">length</span>;i++)&#123;</span><br><span class="line">            aside_li[i].<span class="property">index</span> = i;</span><br><span class="line">            aside_li[i].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="keyword">var</span> idx = <span class="variable language_">this</span>.<span class="property">index</span>;</span><br><span class="line">                <span class="title function_">fnNow</span>(); <span class="comment">// 得到最新的值</span></span><br><span class="line">                <span class="keyword">if</span>(idx &gt; num)&#123;</span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">var</span> j = num + <span class="number">1</span>; j &lt;= idx; j++)&#123;</span><br><span class="line">                        arr[j-<span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span><br><span class="line">                        arr[j].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//删除当前的</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="title function_">fnstyle</span>(idx);</span><br><span class="line">                    arr[idx].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(idx &lt; num)&#123;</span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">var</span> j = num; j &gt; idx; j--)&#123;</span><br><span class="line">                        arr[j].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;downActive&#x27;</span>);</span><br><span class="line">                        arr[j-<span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;upActive&#x27;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="title function_">fnstyle</span>(idx);</span><br><span class="line">                    arr[idx].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//侧边栏状态修改</span></span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">fnstyle</span>(<span class="params">num</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aside_li.<span class="property">length</span>; j++) &#123;</span><br><span class="line">                aside_li[j].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;white&quot;</span>;</span><br><span class="line">                aside_li[j].<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;black&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            aside_li[num].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgb(255,110,0)&quot;</span>;</span><br><span class="line">            aside_li[num].<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;white&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">wheel</span>(<span class="params">e</span>) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">var</span> e = e || event;</span><br><span class="line">            <span class="title function_">fnNow</span>(); <span class="comment">//调用函数fnNow 修改num 为当前div的数组下标</span></span><br><span class="line">            <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">            timer = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="comment">//超过规定时间间隔之后，将flag=true</span></span><br><span class="line">                <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">                <span class="keyword">if</span>(e.<span class="property">wheelDelta</span> &lt; <span class="number">0</span> &amp;&amp; num &lt; arr.<span class="property">length</span> - <span class="number">1</span>) &#123; <span class="comment">//向下滚动</span></span><br><span class="line">                    <span class="comment">//						console.log(&quot;向下&quot;)</span></span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span><br><span class="line">                    num++;</span><br><span class="line">                    <span class="title function_">fnstyle</span>(num);</span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//给下一个（要被看到的DOM）添加</span></span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(e.<span class="property">wheelDelta</span> &gt; <span class="number">0</span> &amp;&amp; num &gt; <span class="number">0</span>) &#123; <span class="comment">//向上滚动</span></span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span><br><span class="line">                    num--;</span><br><span class="line">                    <span class="title function_">fnstyle</span>(num);</span><br><span class="line">                    arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">                    <span class="comment">// 其实这两行的代码就像是第一次向下滚动时的样式</span></span><br><span class="line">                    arr[num + <span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;upActive&#x27;</span>); <span class="comment">//裂开</span></span><br><span class="line">                    arr[num + <span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//裂开</span></span><br><span class="line">                &#125;;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;, throldHold);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 此处添加style 段代码--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 此处添加JavaScript 段代码 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box active&quot;</span>&gt;</span></span><br><span class="line">			1</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			2</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box3&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			3</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box4&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			4</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;bar&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="完整代码，可cv"><a href="#完整代码，可cv" class="headerlink" title="完整代码，可cv"></a>完整代码，可cv</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">			* &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">position</span>: fixed;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">width</span>: <span class="number">100vw</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">transition</span>: all <span class="number">0.8s</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-id">#box1</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: red;</span></span><br><span class="line"><span class="language-css">				<span class="comment">/*z-index: 10;*/</span></span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-id">#box2</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: blue;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-id">#box3</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: green;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-id">#box4</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: yellow;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.bar</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="comment">/*background: gray;*/</span></span></span><br><span class="line"><span class="language-css">				<span class="attribute">width</span>: <span class="number">48px</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">right</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">top</span>: <span class="number">45%</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">z-index</span>: <span class="number">10</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">width</span>: <span class="number">48px</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">list-style</span>: none;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: white;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">width</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">margin</span>: <span class="number">0</span> auto;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">border-top</span>: solid <span class="number">1px</span> <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">padding</span>: <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">border</span>: none;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">110</span>, <span class="number">0</span>);</span></span><br><span class="line"><span class="language-css">				<span class="attribute">color</span>: white;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">border-radius</span>: <span class="number">5px</span> <span class="number">5px</span> <span class="number">0px</span> <span class="number">0px</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.aside</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">border-radius</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">5px</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.active</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">top</span>: <span class="number">0</span> <span class="meta">!important</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">z-index</span>: <span class="number">1</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.downActive</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">top</span>: <span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">			</span></span><br><span class="line"><span class="language-css">			<span class="selector-class">.upActive</span> &#123;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">top</span>: -<span class="number">100%</span>;</span></span><br><span class="line"><span class="language-css">				<span class="attribute">z-index</span>: <span class="number">0</span></span></span><br><span class="line"><span class="language-css">			&#125;</span></span><br><span class="line"><span class="language-css">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">			<span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> arr = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.box&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> aside = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.aside&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> aside_li = aside.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;li&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> throldHold = <span class="number">800</span>; <span class="comment">//两次滚动滚轮事件最小时间间隔</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> flag = <span class="literal">true</span>; <span class="comment">//是否可以调用滚轮事件的方法 true:可以</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> timer = <span class="literal">null</span>;</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">var</span> num;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">//wheel：当用户滚动滚轮触发。</span></span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">window</span>.<span class="property">onwheel</span> = wheel;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">				<span class="comment">//获取当前的div在数组的下标</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">function</span> <span class="title function_">fnNow</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123; <span class="comment">//得到当前checked元素的下标</span></span></span><br><span class="line"><span class="language-javascript">						<span class="keyword">if</span>(arr[i].<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;active&#x27;</span>)) &#123;</span></span><br><span class="line"><span class="language-javascript">							num = i;</span></span><br><span class="line"><span class="language-javascript">						&#125;</span></span><br><span class="line"><span class="language-javascript">					&#125;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">				<span class="comment">// 点击侧边栏，切换</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aside_li.<span class="property">length</span>;i++)&#123;</span></span><br><span class="line"><span class="language-javascript">					aside_li[i].<span class="property">index</span> = i;</span></span><br><span class="line"><span class="language-javascript">					aside_li[i].<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">						<span class="keyword">var</span> idx = <span class="variable language_">this</span>.<span class="property">index</span>;</span></span><br><span class="line"><span class="language-javascript">						<span class="title function_">fnNow</span>(); <span class="comment">// 得到最新的值</span></span></span><br><span class="line"><span class="language-javascript">						<span class="keyword">if</span>(idx &gt; num)&#123;</span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span></span><br><span class="line"><span class="language-javascript">							<span class="keyword">for</span>(<span class="keyword">var</span> j = num + <span class="number">1</span>; j &lt;= idx; j++)&#123;</span></span><br><span class="line"><span class="language-javascript">								arr[j-<span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">								arr[j].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//删除当前的</span></span></span><br><span class="line"><span class="language-javascript">							&#125;</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">fnstyle</span>(idx);</span></span><br><span class="line"><span class="language-javascript">							arr[idx].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span></span><br><span class="line"><span class="language-javascript">						&#125; <span class="keyword">else</span> <span class="keyword">if</span>(idx &lt; num)&#123;</span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span></span><br><span class="line"><span class="language-javascript">							<span class="keyword">for</span>(<span class="keyword">var</span> j = num; j &gt; idx; j--)&#123;</span></span><br><span class="line"><span class="language-javascript">								arr[j].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;downActive&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">								arr[j-<span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;upActive&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">							&#125;</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">fnstyle</span>(idx);</span></span><br><span class="line"><span class="language-javascript">							arr[idx].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span></span><br><span class="line"><span class="language-javascript">						&#125;</span></span><br><span class="line"><span class="language-javascript">					&#125;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">				<span class="comment">//侧边栏状态修改</span></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">function</span> <span class="title function_">fnstyle</span>(<span class="params">num</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aside_li.<span class="property">length</span>; j++) &#123;</span></span><br><span class="line"><span class="language-javascript">						aside_li[j].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;white&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">						aside_li[j].<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;black&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					&#125;</span></span><br><span class="line"><span class="language-javascript">					aside_li[num].<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;rgb(255,110,0)&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">					aside_li[num].<span class="property">style</span>.<span class="property">color</span> = <span class="string">&quot;white&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">function</span> <span class="title function_">wheel</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">					flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> e = e || event;</span></span><br><span class="line"><span class="language-javascript">					<span class="title function_">fnNow</span>(); <span class="comment">//调用函数fnNow 修改num 为当前div的数组下标</span></span></span><br><span class="line"><span class="language-javascript">					<span class="built_in">clearInterval</span>(timer);</span></span><br><span class="line"><span class="language-javascript">					timer = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="comment">//超过规定时间间隔之后，将flag=true</span></span></span><br><span class="line"><span class="language-javascript">						<span class="built_in">clearInterval</span>(timer);</span></span><br><span class="line"><span class="language-javascript">						<span class="keyword">if</span>(e.<span class="property">wheelDelta</span> &lt; <span class="number">0</span> &amp;&amp; num &lt; arr.<span class="property">length</span> - <span class="number">1</span>) &#123; <span class="comment">//向下滚动</span></span></span><br><span class="line"><span class="language-javascript">							<span class="comment">//						console.log(&quot;向下&quot;)</span></span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//删除当前的</span></span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">							num++;</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">fnstyle</span>(num);</span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//给下一个（要被看到的DOM）添加</span></span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>); <span class="comment">//给下一个（要被看到的DOm）添加</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">						&#125; <span class="keyword">else</span> <span class="keyword">if</span>(e.<span class="property">wheelDelta</span> &gt; <span class="number">0</span> &amp;&amp; num &gt; <span class="number">0</span>) &#123; <span class="comment">//向上滚动</span></span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;upActive&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">							num--;</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">fnstyle</span>(num);</span></span><br><span class="line"><span class="language-javascript">							arr[num].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">							<span class="comment">// 其实这两行的代码就像是第一次向下滚动时的样式</span></span></span><br><span class="line"><span class="language-javascript">							arr[num + <span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;upActive&#x27;</span>); <span class="comment">//裂开</span></span></span><br><span class="line"><span class="language-javascript">							arr[num + <span class="number">1</span>].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;downActive&#x27;</span>); <span class="comment">//裂开</span></span></span><br><span class="line"><span class="language-javascript">						&#125;;</span></span><br><span class="line"><span class="language-javascript">						flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">					&#125;, throldHold);</span></span><br><span class="line"><span class="language-javascript">				&#125;;</span></span><br><span class="line"><span class="language-javascript">			&#125;;</span></span><br><span class="line"><span class="language-javascript">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box active&quot;</span>&gt;</span></span><br><span class="line">			1</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			2</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box3&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			3</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box4&quot;</span> <span class="attr">class</span>=<span class="string">&quot;box downActive&quot;</span>&gt;</span></span><br><span class="line">			4</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;bar&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;aside&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>web前端</category>
-        <category>html</category>
-        <category>JavaScript</category>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-        <tag>html</tag>
-        <tag>JavaScript</tag>
-        <tag>css</tag>
-      </tags>
+    <title>hexo test</title>
+    <url>/2024/09/03/hexo-test/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
