@@ -186,10 +186,9 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>Software Testing</title>
     <url>/2024/09/03/softTest/</url>
-    <content><![CDATA[<p>layout: post<br>title: hexo test<br>date: 2024-09-03 01:12:03<br>tags:</p>
-<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Day-01"><a href="#Day-01" class="headerlink" title="Day 01"></a>Day 01</h2><h3 id="Day-01-1"><a href="#Day-01-1" class="headerlink" title="## Day 01"></a>## Day 01</h3><h3 id="00-今日目标"><a href="#00-今日目标" class="headerlink" title="00 今日目标"></a>00 今日目标</h3><ul>
+    <content><![CDATA[<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Day-01"><a href="#Day-01" class="headerlink" title="Day 01"></a>Day 01</h2><h3 id="Day-01-1"><a href="#Day-01-1" class="headerlink" title="## Day 01"></a>## Day 01</h3><h3 id="00-今日目标"><a href="#00-今日目标" class="headerlink" title="00 今日目标"></a>00 今日目标</h3><ul>
 <li>能复述软件测试的定义</li>
 <li>能说出 7 种测试分类的区别</li>
 <li>能说出质量模型的重点 5 项</li>
@@ -354,7 +353,7 @@
 <h4 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h4><h4 id="判定表法"><a href="#判定表法" class="headerlink" title="判定表法"></a>判定表法</h4><h4 id="场景法"><a href="#场景法" class="headerlink" title="场景法"></a>场景法</h4><h4 id="错误推测法"><a href="#错误推测法" class="headerlink" title="错误推测法"></a>错误推测法</h4><h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><h4 id="缺陷编写"><a href="#缺陷编写" class="headerlink" title="缺陷编写"></a>缺陷编写</h4>]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>Spring Boot</title>
     <url>/2024/09/03/SpringBoot/</url>
     <content><![CDATA[<h1 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h1><h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="03-整合第三方技术"><a href="#03-整合第三方技术" class="headerlink" title="03 整合第三方技术"></a>03 整合第三方技术</h3><ul>
 <li><p>整合JUnit</p>
