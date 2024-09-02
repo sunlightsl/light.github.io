@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="layout: posttitle: hexo testdate: 2024-09-03 01:12:03tags: 软件测试Day 01## Day 0100 今日目标 能复述软件测试的定义 能说出 7 种测试分类的区别 能说出质量模型的重点 5 项 能说出测试流程的6个步骤 能说出测试模板 8 个要素  01 认识软件及测试什么是软件 软件：控制计算机硬件工作的工具  软件基本组成 软件产生过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="light">
+<meta property="og:url" content="http://example.com/2024/09/03/softTest/index.html">
+<meta property="og:site_name" content="light">
+<meta property="og:description" content="layout: posttitle: hexo testdate: 2024-09-03 01:12:03tags: 软件测试Day 01## Day 0100 今日目标 能复述软件测试的定义 能说出 7 种测试分类的区别 能说出质量模型的重点 5 项 能说出测试流程的6个步骤 能说出测试模板 8 个要素  01 认识软件及测试什么是软件 软件：控制计算机硬件工作的工具  软件基本组成 软件产生过">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230522120009628.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230522120410989.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230522120627373.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230522120855468.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230525211837340.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230525212104577.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230525212925545.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230525213249189.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526155707253.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160049458.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160151881.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160429925.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160623537.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160756949.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526160904703.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526163814003.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526164223454.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526170430411.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230526170506138.png">
+<meta property="og:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230601110948291.png">
+<meta property="article:published_time" content="2024-09-02T17:40:41.748Z">
+<meta property="article:modified_time" content="2024-09-02T17:42:13.686Z">
+<meta property="article:author" content="light">
+<meta property="article:tag" content="light, Java, 算法, 计算机科学与技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/lightchun/AppData/Roaming/Typora/typora-user-images/image-20230522120009628.png">
+
+<link rel="canonical" href="http://example.com/2024/09/03/softTest/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | light</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">light</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/03/softTest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="light">
+      <meta itemprop="description" content="加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="light">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-03 01:40:41 / 修改时间：01:42:13" itemprop="dateCreated datePublished" datetime="2024-09-03T01:40:41+08:00">2024-09-03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>layout: post<br>title: hexo test<br>date: 2024-09-03 01:12:03<br>tags:</p>
+<h1 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h1><h2 id="Day-01"><a href="#Day-01" class="headerlink" title="Day 01"></a>Day 01</h2><h3 id="Day-01-1"><a href="#Day-01-1" class="headerlink" title="## Day 01"></a>## Day 01</h3><h3 id="00-今日目标"><a href="#00-今日目标" class="headerlink" title="00 今日目标"></a>00 今日目标</h3><ul>
+<li>能复述软件测试的定义</li>
+<li>能说出 7 种测试分类的区别</li>
+<li>能说出质量模型的重点 5 项</li>
+<li>能说出测试流程的6个步骤</li>
+<li>能说出测试模板 8 个要素</li>
+</ul>
+<h3 id="01-认识软件及测试"><a href="#01-认识软件及测试" class="headerlink" title="01 认识软件及测试"></a>01 认识软件及测试</h3><h4 id="什么是软件"><a href="#什么是软件" class="headerlink" title="什么是软件"></a>什么是软件</h4><ul>
+<li>软件：控制计算机硬件工作的工具</li>
+</ul>
+<h4 id="软件基本组成"><a href="#软件基本组成" class="headerlink" title="软件基本组成"></a>软件基本组成</h4><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230522120009628.png" alt="image-20230522120009628"></p>
+<h4 id="软件产生过程"><a href="#软件产生过程" class="headerlink" title="软件产生过程"></a>软件产生过程</h4><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230522120410989.png" alt="image-20230522120410989"></p>
+<h4 id="什么是软件测试"><a href="#什么是软件测试" class="headerlink" title="什么是软件测试"></a>什么是软件测试</h4><ul>
+<li><p>软件测试：使用技术手段验证软件是否满足使用需求</p>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230522120627373.png" alt="image-20230522120627373"></p>
+</li>
+</ul>
+<h4 id="软件测试目的"><a href="#软件测试目的" class="headerlink" title="软件测试目的"></a>软件测试目的</h4><ul>
+<li><p>减少软件缺陷（bug），保障软件质量！</p>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230522120855468.png" alt="image-20230522120855468"></p>
+</li>
+</ul>
+<h3 id="02-测试主流技能"><a href="#02-测试主流技能" class="headerlink" title="02 测试主流技能"></a>02 测试主流技能</h3><h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><ul>
+<li>主要验证程序的功能是否满足需求。</li>
+</ul>
+<h5 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h5><ul>
+<li>使用代码或工具代替手工，对项目进行测试。</li>
+<li>工具实现/代码实现</li>
+</ul>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><ul>
+<li>使用代码或工具对服务端提供的接口进行测试，验证接口是否访问正常。</li>
+<li>工具实现/代码实现</li>
+</ul>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><ul>
+<li>模拟多人使用软件，查找服务器缺陷。</li>
+<li>工具实现/代码实现</li>
+</ul>
+<h3 id="03-常见的测试分类"><a href="#03-常见的测试分类" class="headerlink" title="03 常见的测试分类"></a>03 常见的测试分类</h3><h4 id="按测试阶段"><a href="#按测试阶段" class="headerlink" title="按测试阶段"></a>按测试阶段</h4><ul>
+<li>单元测试：针对程序源代码进行测试；</li>
+<li>集成测试：针对程序接口进行测试；</li>
+<li>系统测试：针对程序功能、非功能进行测试；</li>
+<li>验收测试：使用不同用户（内测、公测）进行测试；</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230525211837340.png" alt="image-20230525211837340"></p>
+<h4 id="按代码可见度划分"><a href="#按代码可见度划分" class="headerlink" title="按代码可见度划分"></a>按代码可见度划分</h4><ul>
+<li>黑盒测试：不关注源代码，针对程序UI功能进行测试；</li>
+<li>灰盒测试：针对程序部分代码进行测试（接口）；</li>
+<li>白盒测试：针对程序源代码进行测试；</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230525212104577.png" alt="image-20230525212104577"></p>
+<h3 id="04-测试模型"><a href="#04-测试模型" class="headerlink" title="04 测试模型"></a>04 测试模型</h3><h4 id="质量模型"><a href="#质量模型" class="headerlink" title="质量模型"></a>质量模型</h4><ul>
+<li>衡量一个优秀软件的维度；</li>
+<li>8个方面：<strong>功能性、性能、兼容性、易用性、安全</strong>、可靠性、可维护性、可移植性；</li>
+<li>前 5 项为重要方面</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230525212925545.png" alt="image-20230525212925545"></p>
+<h5 id="功能性"><a href="#功能性" class="headerlink" title="功能性"></a>功能性</h5><ul>
+<li>功能数量</li>
+<li>功能正确实现</li>
+<li>错误处理情况</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230525213249189.png" alt="image-20230525213249189"></p>
+<h5 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h5><ul>
+<li>服务器每秒处理请求数</li>
+<li>服务器硬件配置是否满足</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526155707253.png" alt="image-20230526155707253"></p>
+<h5 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h5><ul>
+<li><p>浏览器</p>
+</li>
+<li><p>操作系统</p>
+</li>
+<li><p>手机</p>
+</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160049458.png" alt="image-20230526160049458"></p>
+<h5 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h5><ul>
+<li>简洁</li>
+<li>友好</li>
+<li>流畅</li>
+<li>美观</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160151881.png" alt="image-20230526160151881"></p>
+<h5 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h5><ul>
+<li>无响应</li>
+<li>卡顿</li>
+<li>死机</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160429925.png" alt="image-20230526160429925"></p>
+<h5 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h5><ul>
+<li>传输加密</li>
+<li>存储加密</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160623537.png" alt="image-20230526160623537"></p>
+<h5 id="可移植性"><a href="#可移植性" class="headerlink" title="可移植性"></a>可移植性</h5><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160756949.png" alt="image-20230526160756949"></p>
+<h5 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h5><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526160904703.png" alt="image-20230526160904703"></p>
+<h3 id="05-软件测试流程"><a href="#05-软件测试流程" class="headerlink" title="05 软件测试流程"></a>05 软件测试流程</h3><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526163814003.png" alt="image-20230526163814003"></p>
+<h4 id="需求评审"><a href="#需求评审" class="headerlink" title="需求评审"></a>需求评审</h4><ul>
+<li>确保各部门需求理解一致；</li>
+</ul>
+<h4 id="计划编写"><a href="#计划编写" class="headerlink" title="计划编写"></a>计划编写</h4><ul>
+<li>测什么、谁来测、怎么测；</li>
+</ul>
+<h4 id="用例设计"><a href="#用例设计" class="headerlink" title="用例设计"></a>用例设计</h4><ul>
+<li>验证项目是否符合需求的操作文档；</li>
+</ul>
+<h4 id="用例执行"><a href="#用例执行" class="headerlink" title="用例执行"></a>用例执行</h4><ul>
+<li>项目模块开发完成，开始执行用例文档实施测试；</li>
+</ul>
+<h4 id="缺陷管理"><a href="#缺陷管理" class="headerlink" title="缺陷管理"></a>缺陷管理</h4><ul>
+<li>对缺陷进行管理的过程；</li>
+</ul>
+<h4 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h4><ul>
+<li>实施测试结果文档；</li>
+</ul>
+<h3 id="06-测试用例"><a href="#06-测试用例" class="headerlink" title="06 测试用例"></a>06 测试用例</h3><h4 id="什么是用例"><a href="#什么是用例" class="headerlink" title="什么是用例"></a>什么是用例</h4><ul>
+<li>用例：用例使用的案例；</li>
+</ul>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526164223454.png" alt="image-20230526164223454"></p>
+<h4 id="什么是测试用例"><a href="#什么是测试用例" class="headerlink" title="什么是测试用例"></a>什么是测试用例</h4><ul>
+<li>是为测试项目而设计的执行文档；</li>
+</ul>
+<h4 id="用例的作用"><a href="#用例的作用" class="headerlink" title="用例的作用"></a>用例的作用</h4><ul>
+<li>防止漏测；</li>
+<li>实施测试的标准；</li>
+</ul>
+<h4 id="用例的编写格式"><a href="#用例的编写格式" class="headerlink" title="用例的编写格式"></a>用例的编写格式</h4><p>8 大要素</p>
+<ul>
+<li><strong>用例编号</strong>：项目 _ 模块 _ 编号；</li>
+<li><strong>用例标题</strong>：预期结果（测试点）；</li>
+<li><strong>项目/模块</strong>：所属项目或模块；</li>
+<li><strong>优先级</strong>：表示用例的重要程度或者影响力P0~P4（P0最高），用户使用频率最高的模块；</li>
+<li><strong>前置条件</strong>：要执行此条用例，有哪些前置操作；</li>
+<li><strong>测试步骤</strong>：描述操作步骤；</li>
+<li><strong>测试数据</strong>：操作的数据，没有的话可以为空；</li>
+<li><strong>预期结果</strong>：期望达到的结果；</li>
+</ul>
+<h4 id="用例练习"><a href="#用例练习" class="headerlink" title="用例练习"></a>用例练习</h4><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526170430411.png" alt="image-20230526170430411"></p>
+<p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230526170506138.png" alt="image-20230526170506138"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">1、能复述软件测试的定义</span><br><span class="line"><span class="bullet">	*</span> </span><br><span class="line"></span><br><span class="line">2、能说出 7 种测试分类的区别</span><br><span class="line"><span class="bullet">	*</span> 阶段划分</span><br><span class="line"><span class="bullet">		-</span> 单元测试 ： 针对源代码进行测试</span><br><span class="line"><span class="bullet">		-</span> 集成测试 ： 针对接口进行测试</span><br><span class="line"><span class="bullet">		-</span> 系统测试 ： 针对功能和非功能进行测试</span><br><span class="line"><span class="bullet">		-</span> 验收测试 ： 内测、公测</span><br><span class="line"><span class="bullet">    *</span> 代码可见度划分</span><br><span class="line"><span class="bullet">    	-</span> 黑盒测试 ： 不关注源代码对功能测试（系统测试）</span><br><span class="line"><span class="bullet">    	-</span> 灰盒测试 ： 针对接口进行测试（集成测试）</span><br><span class="line"><span class="bullet">    	-</span> 白盒测试 ： 针对源代码进行测试（单元测试）</span><br><span class="line"><span class="bullet">    *</span> 专项</span><br><span class="line"><span class="bullet">    	-</span> 性能测试</span><br><span class="line"><span class="bullet">    	-</span> 安全</span><br><span class="line">3、能说出质量模型的重点 5 项</span><br><span class="line"><span class="bullet">	*</span> 功能</span><br><span class="line"><span class="bullet">	*</span> 性能</span><br><span class="line"><span class="bullet">	*</span> 兼容</span><br><span class="line"><span class="bullet">	*</span> 易用</span><br><span class="line"><span class="bullet">	*</span> 安全</span><br><span class="line"></span><br><span class="line">4、能说出测试流程的 6 个步骤</span><br><span class="line"><span class="bullet">	*</span> 需求评审</span><br><span class="line"><span class="bullet">		-</span> 角色</span><br><span class="line"><span class="bullet">			*</span> 产品经理</span><br><span class="line"><span class="bullet">			*</span> 开发</span><br><span class="line"><span class="bullet">			*</span> 测试</span><br><span class="line"><span class="bullet">        -</span> 目的</span><br><span class="line"><span class="bullet">        	*</span> 需求理解一致</span><br><span class="line"><span class="bullet">        	*</span> 知道被测项目有哪些功能模块</span><br><span class="line"><span class="bullet">	*</span> 测试计划</span><br><span class="line"><span class="bullet">		-</span> 测什么</span><br><span class="line"><span class="bullet">		-</span> 谁来测</span><br><span class="line"><span class="bullet">		-</span> 怎么测</span><br><span class="line"><span class="bullet">	*</span> 用例设计</span><br><span class="line"><span class="bullet">	*</span> 用例执行</span><br><span class="line"><span class="bullet">	*</span> 缺陷管理</span><br><span class="line"><span class="bullet">	*</span> 测试报告</span><br><span class="line">5、能说出测试模板 8 个要素</span><br><span class="line"><span class="bullet">	*</span> 测试编号 ：项目简称<span class="emphasis">_项目简称_</span>编号</span><br><span class="line"><span class="bullet">	*</span> 用例标题 ： 预期结果（测试点）</span><br><span class="line"><span class="bullet">	*</span> 项目/模块 ： 用例所属项目或模块</span><br><span class="line"><span class="bullet">	*</span> 优先级 ： P0 -P4（P0 最高）</span><br><span class="line"><span class="bullet">	*</span> 前置条件/预置条件 ： 操作步骤之前的操作</span><br><span class="line"><span class="bullet">	*</span> 测试步骤 ： 执行用例步骤</span><br><span class="line"><span class="bullet">	*</span> 测试数据 ： 执行步骤中的重点数据</span><br><span class="line"><span class="bullet">	*</span> 预期结果 ： 用例执行结果 + 不同角色隐形结果</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<h2 id="Day-02"><a href="#Day-02" class="headerlink" title="Day 02"></a>Day 02</h2><h3 id="00-学习目标"><a href="#00-学习目标" class="headerlink" title="00 学习目标"></a>00 学习目标</h3><ul>
+<li>能对穷举场景设计测试点；</li>
+<li>能对限定边界规则设计测试点；</li>
+<li>能对多条件依赖关系进行设计测试点；</li>
+<li>能对项目业务进行设计测试点；</li>
+</ul>
+<h4 id="01-等价类划分法"><a href="#01-等价类划分法" class="headerlink" title="01 等价类划分法"></a>01 等价类划分法</h4><h5 id="说明-分类-步骤"><a href="#说明-分类-步骤" class="headerlink" title="说明 | 分类 | 步骤"></a>说明 | 分类 | 步骤</h5><p><img src="C:\Users\lightchun\AppData\Roaming\Typora\typora-user-images\image-20230601110948291.png" alt="image-20230601110948291"></p>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><ul>
+<li>针对：需要大量数据测试输入，但是没法穷举测试的地方<ul>
+<li>输入框</li>
+<li>下拉列表</li>
+<li>单选复选框</li>
+</ul>
+</li>
+<li>典型代表：页面的输入框类测试</li>
+</ul>
+<h4 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h4><h4 id="判定表法"><a href="#判定表法" class="headerlink" title="判定表法"></a>判定表法</h4><h4 id="场景法"><a href="#场景法" class="headerlink" title="场景法"></a>场景法</h4><h4 id="错误推测法"><a href="#错误推测法" class="headerlink" title="错误推测法"></a>错误推测法</h4><h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><h4 id="缺陷编写"><a href="#缺陷编写" class="headerlink" title="缺陷编写"></a>缺陷编写</h4>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/03/hexo-test/" rel="prev" title="hexo test">
+      <i class="fa fa-chevron-left"></i> hexo test
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/03/SpringBoot/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">软件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-01"><span class="nav-number">1.1.</span> <span class="nav-text">Day 01</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-01-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">## Day 01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#00-%E4%BB%8A%E6%97%A5%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">00 今日目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#01-%E8%AE%A4%E8%AF%86%E8%BD%AF%E4%BB%B6%E5%8F%8A%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">01 认识软件及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">什么是软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">软件基本组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%BA%A7%E7%94%9F%E8%BF%87%E7%A8%8B"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">软件产生过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">什么是软件测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9B%AE%E7%9A%84"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">软件测试目的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-%E6%B5%8B%E8%AF%95%E4%B8%BB%E6%B5%81%E6%8A%80%E8%83%BD"><span class="nav-number">1.1.4.</span> <span class="nav-text">02 测试主流技能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.0.1.</span> <span class="nav-text">功能测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.0.2.</span> <span class="nav-text">自动化测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.0.3.</span> <span class="nav-text">接口测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.0.4.</span> <span class="nav-text">性能测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.5.</span> <span class="nav-text">03 常见的测试分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">按测试阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E4%BB%A3%E7%A0%81%E5%8F%AF%E8%A7%81%E5%BA%A6%E5%88%92%E5%88%86"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">按代码可见度划分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.6.</span> <span class="nav-text">04 测试模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">质量模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%80%A7"><span class="nav-number">1.1.6.1.1.</span> <span class="nav-text">功能性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">1.1.6.1.2.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.1.6.1.3.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%93%E7%94%A8%E6%80%A7"><span class="nav-number">1.1.6.1.4.</span> <span class="nav-text">易用性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="nav-number">1.1.6.1.5.</span> <span class="nav-text">可靠性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E5%85%A8"><span class="nav-number">1.1.6.1.6.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7"><span class="nav-number">1.1.6.1.7.</span> <span class="nav-text">可移植性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E7%BB%B4%E6%8A%A4%E6%80%A7"><span class="nav-number">1.1.6.1.8.</span> <span class="nav-text">可维护性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.7.</span> <span class="nav-text">05 软件测试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E8%AF%84%E5%AE%A1"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">需求评审</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E5%88%92%E7%BC%96%E5%86%99"><span class="nav-number">1.1.7.2.</span> <span class="nav-text">计划编写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.1.7.3.</span> <span class="nav-text">用例设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E6%89%A7%E8%A1%8C"><span class="nav-number">1.1.7.4.</span> <span class="nav-text">用例执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E9%99%B7%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.7.5.</span> <span class="nav-text">缺陷管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A"><span class="nav-number">1.1.7.6.</span> <span class="nav-text">测试报告</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">1.1.8.</span> <span class="nav-text">06 测试用例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B"><span class="nav-number">1.1.8.1.</span> <span class="nav-text">什么是用例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">1.1.8.2.</span> <span class="nav-text">什么是测试用例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.8.3.</span> <span class="nav-text">用例的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E7%9A%84%E7%BC%96%E5%86%99%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.8.4.</span> <span class="nav-text">用例的编写格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E7%BB%83%E4%B9%A0"><span class="nav-number">1.1.8.5.</span> <span class="nav-text">用例练习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.9.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-02"><span class="nav-number">1.2.</span> <span class="nav-text">Day 02</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#00-%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.1.</span> <span class="nav-text">00 学习目标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#01-%E7%AD%89%E4%BB%B7%E7%B1%BB%E5%88%92%E5%88%86%E6%B3%95"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">01 等价类划分法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E-%E5%88%86%E7%B1%BB-%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">说明 | 分类 | 步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E5%80%BC%E5%88%86%E6%9E%90%E6%B3%95"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">边界值分析法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E8%A1%A8%E6%B3%95"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">判定表法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E6%B3%95"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">场景法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%8E%A8%E6%B5%8B%E6%B3%95"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">错误推测法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E9%99%B7%E7%BC%96%E5%86%99"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">缺陷编写</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">light</p>
+  <div class="site-description" itemprop="description">加紧学习，抓住中心，宁精勿杂，宁专勿多。——周恩来</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">light</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">28k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
